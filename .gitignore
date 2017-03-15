@@ -15,6 +15,7 @@ hs_err_pid*
 
 /**/.idea/
 /**/.out/
+/**/target/
 ./out
 *.iml
 ./SpringPractice/back
