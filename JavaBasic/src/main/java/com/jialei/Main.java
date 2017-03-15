@@ -1,4 +1,4 @@
-package jialei.javacamp.basicknowledge;
+package com.jialei;
 
 public class Main {
 

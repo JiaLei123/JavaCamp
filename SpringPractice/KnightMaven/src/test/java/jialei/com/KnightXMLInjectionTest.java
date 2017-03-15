@@ -29,12 +29,13 @@ public class KnightXMLInjectionTest {
     @Test
     public void shouldInjectKnightWithSlayDragonQuest() {
         knight.embarkOnQuest();
-        //assertEquals(1,1);
+        assertEquals(1,1);
         assertEquals(
                 "Fa la la, the knight is so brave!\n" +
                         "Embarking on quest to slay the dragon!\n" +
                         "Tee hee hee, the brave knight did embark on a quest!\n",
                 printStream.getPrintedString());
+
     }
 
 }

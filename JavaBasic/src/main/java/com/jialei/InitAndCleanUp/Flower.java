@@ -1,4 +1,4 @@
-package jialei.javacamp.basicknowledge.InitAndCleanUp;
+package  com.jialei.InitAndCleanUp;
 
 /**
  * Created by JiaLei on 2016/10/11.
