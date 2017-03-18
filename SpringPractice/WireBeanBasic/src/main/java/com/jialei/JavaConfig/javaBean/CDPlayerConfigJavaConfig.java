@@ -3,6 +3,8 @@ package com.jialei.JavaConfig.javaBean;
 import com.jialei.JavaConfig.CDPlayerJavaConfig;
 import com.jialei.JavaConfig.CompactDiscJavaConfig;
 import com.jialei.JavaConfig.sgtPeppersJavaConfig;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -11,15 +13,17 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class CDPlayerConfigJavaConfig {
+    private final Logger logger = LoggerFactory.getLogger(CDPlayerConfigJavaConfig.class);
+
     @Bean
     public CompactDiscJavaConfig sgtSeppersJavaConfig(){
-        System.out.println("Get CD");
+        logger.info("Get CD");
         return new sgtPeppersJavaConfig();
     }
 
     @Bean
     public CDPlayerJavaConfig cdPlayerJavaConfig(CompactDiscJavaConfig compactDiscJavaConfig){
-        System.out.println("Get players");
+        logger.info("Get players");
         return  new CDPlayerJavaConfig(compactDiscJavaConfig);
     }
 }
