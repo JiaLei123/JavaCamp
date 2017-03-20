@@ -1,6 +1,5 @@
 package com.jialei.JavaConfig;
 
-import com.jialei.CompactDisc;
 import com.jialei.JavaConfig.javaBean.*;
 import org.junit.Rule;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package com.jialei;
+package com.jialei.AutoWire;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

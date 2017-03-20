@@ -1,4 +1,4 @@
-package com.jialei;
+package com.jialei.AutoWire;
 
 /**
  * Created by JiaLei on 2017/3/18.

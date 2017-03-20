@@ -1,4 +1,4 @@
-package com.jialei;
+package com.jialei.AutoWire;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
