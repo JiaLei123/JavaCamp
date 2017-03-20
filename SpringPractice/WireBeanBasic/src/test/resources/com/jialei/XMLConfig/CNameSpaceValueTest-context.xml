@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="blankDisc" class="com.jialei.XMLConfig.BlankDiscXMLConfig" c:artist="The Beatles" c:title="Sgt. Pepper's Lonely Hearts Club Band">
+    </bean>
+
+    <bean id="cdplayer" class="com.jialei.XMLConfig.CDPlayerXMLConfig" c:_0-ref="blankDisc">
+    </bean>
+</beans>

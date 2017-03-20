@@ -13,6 +13,6 @@ public class BlankDiscXMLConfig implements CompactDiscXMLConfig {
     }
 
     public void play() {
-        System.out.println("Playing " + title + " by " + artist);
+        System.out.println("playing " + title + " by " + artist);
     }
 }
