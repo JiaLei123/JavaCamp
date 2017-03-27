@@ -1,5 +1,8 @@
-package com.jialei;
+package com.jialei.profile;
 
+import com.jialei.profile.CompactDisc;
+import com.jialei.profile.CompactDiscConfig;
+import com.jialei.profile.StgDisc;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

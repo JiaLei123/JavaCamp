@@ -1,4 +1,4 @@
-package com.jialei;
+package com.jialei.profile;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
