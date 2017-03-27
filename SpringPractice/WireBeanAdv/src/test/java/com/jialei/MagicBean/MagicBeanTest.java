@@ -18,8 +18,10 @@ public class MagicBeanTest {
     @Autowired
     private ApplicationContext context;
 
+    @Autowired
+    private MagicBean bean;
     @Test
     public void MagicBeanExist(){
-        assertTrue(context.containsBean("magicBean"));
+        assertTrue(bean instanceof MagicBean);
     }
 }

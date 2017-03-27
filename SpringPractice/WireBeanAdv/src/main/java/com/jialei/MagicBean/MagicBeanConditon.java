@@ -12,7 +12,7 @@ public class MagicBeanConditon implements Condition{
     public boolean matches(ConditionContext context, AnnotatedTypeMetadata metadata){
         Environment env =  context.getEnvironment();
         String tomcateHome = env.getProperty("CATALINA_HOME");
-        if(tomcateHome == "C:\\JavaTools\\apache-tomcat-8.5.6"){
+        if(tomcateHome.contentEquals( "C:\\JavaTools\\apache-tomcat-8.5.6")){
             return true;
         }else {
             return false;
