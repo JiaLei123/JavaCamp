@@ -27,6 +27,5 @@ public class UUIDGenerateTask implements Runnable {
         }
 
         UUIDContainer.GetInstance().getUuidMap().putAll(uuids);
-        UUIDContainer.GetInstance().getUuidMap().putAll(uuids);
     }
 }
