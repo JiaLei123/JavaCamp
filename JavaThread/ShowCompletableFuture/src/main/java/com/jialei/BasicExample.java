@@ -1,5 +1,7 @@
 package com.jialei;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.concurrent.CompletableFuture;
 
 /**
@@ -86,6 +88,7 @@ public class BasicExample
         });
 
         System.out.println("Result: " + cf.join());
+        Arrays.sort();
     }
 
 
