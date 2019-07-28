@@ -3,6 +3,7 @@ package com.jialei.dynamicProxy;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.util.Arrays;
 
 public class LogHandler implements InvocationHandler {
     private Object targetObject;
@@ -15,9 +16,7 @@ public class LogHandler implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         System.out.println("start-->>");
-        for(int i = 0; i<args.length; i++){
-            System.out.println(args[i]);
-        }
+        Arrays.stream(args).forEach(System.out::println);
         Object ret = null;
         try{
             System.out.println("satrt-->>");
