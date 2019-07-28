@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+    <bean id="audience" class="jailei.com.aspectxml.Audience"/>
+
+    <bean id="myperformance" class="jailei.com.aspectbasic.PerformanceImpl"/>
+
+    <aop:aspectj-autoproxy/>
+    <aop:config>
+        <aop:pointcut id="performance" expression="execution(* jailei.com.aspectbasic.Performance.perform(..))"/>
+        <aop:aspect ref="audience">
+            <aop:before pointcut-ref="performance"  method="silenceCellPhones"/>
+            <aop:after pointcut-ref="performance" method="afterPlay"/>
+            <aop:after-returning pointcut-ref="performance" method="afterGoHome"/>
+            <aop:around method="doBeforeAndAfter" pointcut-ref="performance"/>
+        </aop:aspect>
+    </aop:config>
+
+</beans>
