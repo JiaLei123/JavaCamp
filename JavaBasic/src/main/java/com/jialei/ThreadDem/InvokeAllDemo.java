@@ -37,5 +37,7 @@ public class InvokeAllDemo {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
+
+        executor.shutdown();
     }
 }
