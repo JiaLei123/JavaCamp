@@ -1,4 +1,4 @@
-package springcloud.controller;
+package com.jialei.springcloud.controller;
 
 import com.jialei.springcloud.entities.Dept;
 import com.jialei.springcloud.service.DeptClientService;

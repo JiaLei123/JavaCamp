@@ -2,9 +2,7 @@ package com.jialei.springcloud.controller;
 
 import com.jialei.springcloud.entities.Dept;
 import com.jialei.springcloud.service.DeptService;
-import jdk.nashorn.internal.objects.annotations.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

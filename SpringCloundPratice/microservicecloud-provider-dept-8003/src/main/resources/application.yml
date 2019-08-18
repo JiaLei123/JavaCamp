@@ -3,7 +3,7 @@ server:
 
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml
-  type-aliases-package: com.jialei.springcloud.entities
+  type-aliases-package: com.jialei.jialei.springcloud.entities
   mapper-locations:
     - classpath:mybatis/mapper/**/*.xml
 
