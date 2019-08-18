@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>microservicecloud-consumer-dept-80</artifactId>
+    <artifactId>microservicecloud-consumer-dept-feign</artifactId>
 
     <dependencies>
         <dependency>
@@ -29,6 +29,10 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-ribbon</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
         </dependency>
 
         <!--热加载-->
@@ -51,5 +55,6 @@
             <scope>compile</scope>
         </dependency>
     </dependencies>
+
 
 </project>
