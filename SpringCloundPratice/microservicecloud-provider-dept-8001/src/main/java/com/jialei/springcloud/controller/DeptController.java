@@ -22,6 +22,13 @@ public class DeptController {
 
     @RequestMapping(value = "/dept/get/{id}", method = RequestMethod.GET)
     public Dept get(@PathVariable("id") Long id) {
+        if(id == 4){
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
         return service.findById(id);
     }
 
