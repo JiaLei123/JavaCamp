@@ -29,7 +29,8 @@ public class DeptControllerConsumer {
 
     @RequestMapping(value = "consumer/dept/get/{id}")
     public Dept get(@PathVariable("id") Long id){
-        return restTemplate.getForObject(REST_URL_PREFIX + "/dept/get/" + id, Dept.class);
+        Dept getDept = restTemplate.getForObject(REST_URL_PREFIX + "/dept/get/" + id, Dept.class);
+        return getDept;
     }
 
     @SuppressWarnings("unchecked")
