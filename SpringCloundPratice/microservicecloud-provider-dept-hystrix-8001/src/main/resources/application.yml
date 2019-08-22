@@ -16,7 +16,7 @@ spring:
     dbcp2:
       min-idle: 5
       initial-size: 5
-        max-total: 5
+      max-total: 5
       max-wait-millis: 200
 server:
   port: 8001
@@ -28,6 +28,7 @@ eureka:
   instance:
     instance-id: microservicecloud-dept8001-hystrix
     prefer-ip-address: true
+
 info:
   app.name: microserviceclound
   company.name: aaa

@@ -2,6 +2,7 @@ package com.jialei.springcloud.controller;
 
 import com.jialei.springcloud.entities.Dept;
 import com.jialei.springcloud.service.DeptService;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import jdk.nashorn.internal.objects.annotations.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,7 @@ public class DeptController {
     }
 
     @RequestMapping(value = "/dept/get/{id}", method = RequestMethod.GET)
+    @HystrixCommand(fallbackMethod = "processHystrix_Get")
     public Dept get(@PathVariable("id") Long id) {
         if(id == 4){
             try {
@@ -35,5 +37,9 @@ public class DeptController {
     @RequestMapping(value = "/dept/list", method = RequestMethod.GET)
     public List<Dept> list() {
         return service.findAll();
+    }
+
+    public Dept processHystrix_Get(@PathVariable("id") Long id){
+        return new Dept().setDepNo(id).setDName("该ID" + id + "没有对应的信息").setDName("no this DB in MySQL");
     }
 }
