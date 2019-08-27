@@ -13,8 +13,16 @@ eureka:
     instance-id: gateway-9527.com
     prefer-ip-address: true
 
+
 info:
   app.name: jialei-microcloud
   company.name: aaa
   build.artifactId: $project.artifactId$
   build.version: $project.version$
+
+zuul:
+  routes:
+    mydept.serviceId: microservicecloud-dept
+    mydept.path: /mydept/**
+  ignored-services: "*"
+  prefix: /jialei
