@@ -65,6 +65,11 @@ public class SpittleControllerTest {
                         hasItems(expectedSpittles.toArray())));
     }
 
+    @Test
+    public void testSpittle(){
+
+    }
+
     private List<Spittle> createSpittleList(int count) {
         List<Spittle> spittles = new ArrayList<Spittle>();
         for (int i = 0; i < count; i++) {

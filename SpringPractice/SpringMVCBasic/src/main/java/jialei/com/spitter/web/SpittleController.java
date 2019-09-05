@@ -59,9 +59,9 @@ public class SpittleController {
         return "spittle";
     }
 
-    @RequestMapping(value = "/all", method=RequestMethod.POST)
+    @RequestMapping(method=RequestMethod.POST)
     public String saveSpittle(SpittleForm form, Model model) throws Exception {
         spittleRepository.save(new Spittle(form.getMessage(), new Date()));
-        return "redirect:/spittles/all";
+        return "redirect:/spittles";
     }
 }
