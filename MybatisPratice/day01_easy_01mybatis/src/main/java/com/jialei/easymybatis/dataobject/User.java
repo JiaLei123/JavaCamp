@@ -2,6 +2,7 @@ package com.jialei.easymybatis.dataobject;
 
 import java.util.Date;
 import lombok.Data;
+import lombok.Getter;
 
 @Data
 public class User {
