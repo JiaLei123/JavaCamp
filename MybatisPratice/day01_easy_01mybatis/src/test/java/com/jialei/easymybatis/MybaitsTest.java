@@ -7,6 +7,8 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import sun.plugin2.message.CustomSecurityManagerAckMessage;
 
@@ -16,27 +18,32 @@ import java.util.Date;
 import java.util.List;
 
 public class MybaitsTest {
+    private InputStream in = null;
+    private SqlSession sqlSession = null;
 
-    private void init(){
+    @Before
+    public void init() throws IOException {
+        this.in = Resources.getResourceAsStream("mybatis/SqlMapConfig.xml");
+        SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();
+        SqlSessionFactory factory = builder.build(in);
+        this.sqlSession = factory.openSession();
+    }
 
+    @After
+    public void destory() throws IOException {
+        sqlSession.close();
+        in.close();
     }
 
     @Test
     public void testFindAll() throws IOException {
-        InputStream in = Resources.getResourceAsStream("mybatis/SqlMapConfig.xml");
-        SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();
-        SqlSessionFactory factory = builder.build(in);
-        SqlSession session = factory.openSession();
-        IUserDao userDao = session.getMapper(IUserDao.class);
+        IUserDao userDao = sqlSession.getMapper(IUserDao.class);
         List<User> users = userDao.findAll();
         users.forEach(user-> System.out.println( user));
 
-        IUserDao2 userDao2 = session.getMapper(IUserDao2.class);
+        IUserDao2 userDao2 = sqlSession.getMapper(IUserDao2.class);
         List<User> users2 = userDao2.findAll();
         users2.forEach(user-> System.out.println( user));
-
-        session.close();
-        in.close();
     }
 
     @Test
@@ -47,16 +54,28 @@ public class MybaitsTest {
         user.setSex("M");
         user.setBirthday(new Date());
 
-        InputStream in = Resources.getResourceAsStream("mybatis/SqlMapConfig.xml");
-        SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();
-        SqlSessionFactory factory = builder.build(in);
-        SqlSession session = factory.openSession();
-        IUserDao userDao = session.getMapper(IUserDao.class);
+        IUserDao userDao = sqlSession.getMapper(IUserDao.class);
         userDao.saveUser(user);
+        sqlSession.commit();
 
         List<User> users = userDao.findAll();
         users.forEach(a-> System.out.println(a));
-        session.close();
-        in.close();
+    }
+
+    @Test
+    public void testUpdateUser() throws IOException {
+        User user = new User();
+        user.setId(60);
+        user.setUsername("Test Update Name");
+        user.setAddress("Test Update Address");
+        user.setSex("M");
+        user.setBirthday(new Date());
+
+        IUserDao userDao = sqlSession.getMapper(IUserDao.class);
+        userDao.updateUser(user);
+        sqlSession.commit();
+
+        List<User> users = userDao.findAll();
+        users.forEach(a-> System.out.println(a));
     }
 }
