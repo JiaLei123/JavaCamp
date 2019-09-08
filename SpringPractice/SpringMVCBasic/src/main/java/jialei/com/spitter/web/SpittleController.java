@@ -24,7 +24,11 @@ public class SpittleController {
         this.spittleRepository = spittleRepository;
     }
 
-    @RequestMapping(method = RequestMethod.GET)
+    /**
+     * Test only
+     * @return
+     */
+    @RequestMapping(value = "/gets", method = RequestMethod.GET)
     public String spittles(Model model){
         model.addAttribute(spittleRepository.findSpittles(Long.MAX_VALUE, 20));
         return "spittles";
@@ -42,12 +46,17 @@ public class SpittleController {
         return "spittles";
     }
 
+    /**
+     *
+     * @return
+     */
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public List<Spittle> spittlesName(){
         return spittleRepository.findSpittles(Long.MAX_VALUE, 20);
     }
 
-    @RequestMapping(value = "/gets", method = RequestMethod.GET)
+
+    @RequestMapping(method = RequestMethod.GET)
     public List<Spittle> spittlesName(@RequestParam(value = "max", defaultValue = "100000000") long max,
                                       @RequestParam(value = "count", defaultValue = "20") int count){
         return spittleRepository.findSpittles(max, count);

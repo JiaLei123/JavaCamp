@@ -23,7 +23,7 @@ public class SpittleControllerTest {
     public void shouldShowRecentSpittles() throws Exception {
         List<Spittle> expectedSpittles = createSpittleList(20);
         SpittleRepository mockRepository = mock(SpittleRepository.class);
-        Mockito.when(mockRepository.findSpittles(Long.MAX_VALUE, 20)).thenReturn(expectedSpittles);
+        Mockito.when(mockRepository.findSpittles(anyLong(), anyInt())).thenReturn(expectedSpittles);
         SpittleController controller = new SpittleController(mockRepository);
 
         MockMvc mockMvc = MockMvcBuilders.standaloneSetup(controller)
@@ -58,15 +58,29 @@ public class SpittleControllerTest {
                 .setSingleView(new InternalResourceView("/WEB-INF/views/spittles.jsp"))
                 .build();
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/spittles/gets?max=238900&count=50"))
-                .andExpect(MockMvcResultMatchers.view().name("spittles/gets"))
+        mockMvc.perform(MockMvcRequestBuilders.get("/spittles?max=238900&count=50"))
+                .andExpect(MockMvcResultMatchers.view().name("spittles"))
                 .andExpect(MockMvcResultMatchers.model().attributeExists("spittleList"))
                 .andExpect(MockMvcResultMatchers.model().attribute("spittleList",
                         hasItems(expectedSpittles.toArray())));
     }
 
     @Test
-    public void testSpittle(){
+    public void testSpittlePathValues() throws Exception {
+        Spittle expectedSpittle = new Spittle("Hello", new Date());
+        SpittleRepository mockRepository = mock(SpittleRepository.class);
+        when(mockRepository.findOne(anyLong()))
+                .thenReturn(expectedSpittle);
+
+        SpittleController controller = new SpittleController(mockRepository);
+        MockMvc mockMvc = MockMvcBuilders.standaloneSetup(controller)
+                .setSingleView(new InternalResourceView("/WEB-INF/views/spittles.jsp"))
+                .build();
+
+        mockMvc.perform(MockMvcRequestBuilders.get("/spittles/show/12345"))
+                .andExpect(MockMvcResultMatchers.view().name("spittle"))
+                .andExpect(MockMvcResultMatchers.model().attributeExists("spittle"))
+                .andExpect(MockMvcResultMatchers.model().attribute("spittle", expectedSpittle));
 
     }
 
