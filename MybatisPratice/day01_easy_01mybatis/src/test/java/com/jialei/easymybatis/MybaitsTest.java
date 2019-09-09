@@ -1,8 +1,10 @@
 package com.jialei.easymybatis;
 
+import com.jialei.easymybatis.VO.QueryVO;
 import com.jialei.easymybatis.dao.IUserDao;
 import com.jialei.easymybatis.dao.IUserDao2;
 import com.jialei.easymybatis.dataobject.User;
+import com.jialei.easymybatis.dataobject.User1;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -10,7 +12,6 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import sun.plugin2.message.CustomSecurityManagerAckMessage;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -46,6 +47,7 @@ public class MybaitsTest {
         users2.forEach(user-> System.out.println( user));
     }
 
+
     @Test
     public void testSaveUser() throws IOException {
         User user = new User();
@@ -58,14 +60,28 @@ public class MybaitsTest {
         userDao.saveUser(user);
         sqlSession.commit();
 
-        List<User> users = userDao.findAll();
-        users.forEach(a-> System.out.println(a));
+        System.out.println(user);
+    }
+
+    @Test
+    public void testSaveUser2() throws IOException {
+        User user = new User();
+        user.setUsername("Test2 Name");
+        user.setAddress("Test2 Address");
+        user.setSex("M");
+        user.setBirthday(new Date());
+
+        IUserDao userDao = sqlSession.getMapper(IUserDao.class);
+        userDao.saveUser2(user);
+        sqlSession.commit();
+
+        System.out.println(user);
     }
 
     @Test
     public void testUpdateUser() throws IOException {
         User user = new User();
-        user.setId(60);
+        user.setId(45);
         user.setUsername("Test Update Name");
         user.setAddress("Test Update Address");
         user.setSex("M");
@@ -78,4 +94,44 @@ public class MybaitsTest {
         List<User> users = userDao.findAll();
         users.forEach(a-> System.out.println(a));
     }
+
+    @Test
+    public void testDeleteUser(){
+        IUserDao userDao = sqlSession.getMapper(IUserDao.class);
+        userDao.deleteUser(45);
+        sqlSession.commit();
+
+        List<User> users = userDao.findAll();
+        users.forEach(a-> System.out.println(a));
+
+    }
+
+    @Test
+    public void testFindById(){
+        IUserDao userDao = sqlSession.getMapper(IUserDao.class);
+        User user = userDao.findById(41);
+        System.out.println(user);
+
+    }
+
+
+    @Test
+    public void testFindByName(){
+        IUserDao userDao = sqlSession.getMapper(IUserDao.class);
+        List<User> users = userDao.findByName("%老王%");
+        users.forEach(a-> System.out.println(a));
+    }
+
+    @Test
+    public void testFindByQueryVO(){
+        QueryVO queryVO = new QueryVO();
+        User user = new User();
+        user.setUsername("老王");
+        queryVO.setUser(user);
+
+        IUserDao userDao = sqlSession.getMapper(IUserDao.class);
+        List<User> users = userDao.findByQueryVO(queryVO);
+        users.forEach(a-> System.out.println(a));
+    }
+
 }
