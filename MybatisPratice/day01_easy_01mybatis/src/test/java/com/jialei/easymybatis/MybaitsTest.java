@@ -1,8 +1,10 @@
 package com.jialei.easymybatis;
 
 import com.jialei.easymybatis.VO.QueryVO;
+import com.jialei.easymybatis.dao.IAccountDao;
 import com.jialei.easymybatis.dao.IUserDao;
 import com.jialei.easymybatis.dao.IUserDao2;
+import com.jialei.easymybatis.dataobject.Account;
 import com.jialei.easymybatis.dataobject.User;
 import com.jialei.easymybatis.dataobject.User1;
 import org.apache.ibatis.io.Resources;
@@ -15,6 +17,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -132,6 +135,52 @@ public class MybaitsTest {
         IUserDao userDao = sqlSession.getMapper(IUserDao.class);
         List<User> users = userDao.findByQueryVO(queryVO);
         users.forEach(a-> System.out.println(a));
+    }
+
+
+    @Test
+    public void testFindByCondition(){
+        User user = new User();
+        user.setUsername("老王");
+
+        IUserDao userDao = sqlSession.getMapper(IUserDao.class);
+        List<User> users = userDao.findByCondition(user);
+        users.forEach(a-> System.out.println(a));
+    }
+
+
+    @Test
+    public void testFindByCondition1(){
+        User user = new User();
+        user.setUsername("老王");
+        user.setSex("男");
+
+        IUserDao userDao = sqlSession.getMapper(IUserDao.class);
+        List<User> users = userDao.findByCondition1(user);
+        users.forEach(a-> System.out.println(a));
+    }
+
+    @Test
+    public void findByIds(){
+        QueryVO queryVO = new QueryVO();
+        User user = new User();
+        user.setUsername("老王");
+        //queryVO.setUser(user);
+        List<Integer> ids = new ArrayList<>();
+        ids.add(41);
+        ids.add(42);
+        queryVO.setIds(ids);
+
+        IUserDao userDao = sqlSession.getMapper(IUserDao.class);
+        List<User> users = userDao.findByIds(queryVO);
+        users.forEach(a-> System.out.println(a));
+    }
+
+    @Test
+    public void testFindAllAccount(){
+        IAccountDao accountDao = sqlSession.getMapper(IAccountDao.class);
+        List<Account> accounts = accountDao.findAll();
+        accounts.forEach(a-> System.out.println(a));
     }
 
 }

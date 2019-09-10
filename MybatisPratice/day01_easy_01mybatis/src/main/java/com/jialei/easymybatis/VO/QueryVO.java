@@ -6,6 +6,8 @@ package com.jialei.easymybatis.VO;
 import com.jialei.easymybatis.dataobject.User;
 import lombok.Data;
 
+import java.util.List;
+
 /**
  *
  * @author jialei
@@ -14,4 +16,5 @@ import lombok.Data;
 @Data
 public class QueryVO {
     private User user;
-}
+    private List<Integer> ids;
+ }

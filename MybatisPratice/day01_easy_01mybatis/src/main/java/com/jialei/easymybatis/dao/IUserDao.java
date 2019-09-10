@@ -22,4 +22,10 @@ public interface IUserDao {
     List<User> findByName(String name);
 
     List<User> findByQueryVO(QueryVO queryVO);
+
+    List<User> findByCondition(User user);
+
+    List<User> findByCondition1(User user);
+
+    List<User> findByIds(QueryVO queryVO);
 }

@@ -11,6 +11,19 @@ repositories {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+
+    compile 'com.squareup.okhttp3:okhttp:3.10.0',
+            'com.alibaba:fastjson:1.2.26',
+            'commons-io:commons-io:2.5',
+            'org.apache.commons:commons-csv:1.6',
+            'org.apache.httpcomponents:httpcore-nio:4.4.4',
+            'org.apache.httpcomponents:httpclient:4.5.2',
+            'org.codehaus.plexus:plexus-utils:2.1',
+            'org.freemarker:freemarker:2.3.25-incubating',
+            'net.sourceforge.pmd:pmd-java:5.5.4',
+            'net.sourceforge.pmd:pmd-vm:5.5.4',
+            'net.sourceforge.pmd:pmd-xml:5.5.4',
+            "asm:asm-commons:3.3"
 }
 
 compileKotlin {

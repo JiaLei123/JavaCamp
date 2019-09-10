@@ -20,3 +20,18 @@ values
 (44, '老王3', '2018-02-27 17:47:09', '男', '北京3');
 
 select * from user
+
+DROP table account;
+CREATE TABLE account(
+    ID int(11) NOT NULL auto_increment,
+    UID int(11) NOT NULL  COMMENT '用户编号',
+    MONEY double default NULL COMMENT '金额',
+    PRIMARY KEY (ID),
+    foreign key(UID) references user(id)
+) ;
+
+insert into account(ID, UID, MONEY)
+values
+(1, 41, 1000),
+(2, 42, 1000),
+(3, 41, 2000);
