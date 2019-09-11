@@ -1,6 +1,8 @@
 package com.jialei.easymybatis.dataobject;
 
 import java.util.Date;
+import java.util.List;
+
 import lombok.Data;
 import lombok.Getter;
 import lombok.ToString;
@@ -13,4 +15,6 @@ public class User {
     private Date birthday;
     private String sex;
     private String address;
+
+    private List<Account> accounts;
 }

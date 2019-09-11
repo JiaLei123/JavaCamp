@@ -4,6 +4,7 @@
 package com.jialei.easymybatis.dao;
 
 import com.jialei.easymybatis.dataobject.Account;
+import com.jialei.easymybatis.dataobject.AccountUser;
 
 import java.util.List;
 
@@ -14,4 +15,8 @@ import java.util.List;
  */
 public interface IAccountDao {
     List<Account> findAll();
+
+    List<AccountUser> findAllAccountUser();
+
+    List<Account> findAllAccountUser1();
 }

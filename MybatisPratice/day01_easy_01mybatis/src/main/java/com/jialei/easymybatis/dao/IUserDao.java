@@ -28,4 +28,6 @@ public interface IUserDao {
     List<User> findByCondition1(User user);
 
     List<User> findByIds(QueryVO queryVO);
+
+    List<User> findAllUserAccount();
 }

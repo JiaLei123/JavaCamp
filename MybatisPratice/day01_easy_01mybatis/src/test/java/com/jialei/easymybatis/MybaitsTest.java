@@ -5,6 +5,7 @@ import com.jialei.easymybatis.dao.IAccountDao;
 import com.jialei.easymybatis.dao.IUserDao;
 import com.jialei.easymybatis.dao.IUserDao2;
 import com.jialei.easymybatis.dataobject.Account;
+import com.jialei.easymybatis.dataobject.AccountUser;
 import com.jialei.easymybatis.dataobject.User;
 import com.jialei.easymybatis.dataobject.User1;
 import org.apache.ibatis.io.Resources;
@@ -180,6 +181,31 @@ public class MybaitsTest {
     public void testFindAllAccount(){
         IAccountDao accountDao = sqlSession.getMapper(IAccountDao.class);
         List<Account> accounts = accountDao.findAll();
+        accounts.forEach(a-> System.out.println(a));
+    }
+
+    @Test
+    public void testFindAllAccount1(){
+        IAccountDao accountDao = sqlSession.getMapper(IAccountDao.class);
+        List<Account> accounts = accountDao.findAllAccountUser1();
+        for (Account account : accounts) {
+            System.out.println(account);
+            //System.out.println(account.getUser());
+        }
+    }
+
+
+    @Test
+    public void testFindAllAccountUser(){
+        IAccountDao accountDao = sqlSession.getMapper(IAccountDao.class);
+        List<AccountUser> accounts = accountDao.findAllAccountUser();
+        accounts.forEach(a-> System.out.println(a));
+    }
+
+    @Test
+    public void testFindAllUserAccount(){
+        IUserDao userDao = sqlSession.getMapper(IUserDao.class);
+        List<User> accounts = userDao.findAllUserAccount();
         accounts.forEach(a-> System.out.println(a));
     }
 
