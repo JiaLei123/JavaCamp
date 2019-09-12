@@ -30,4 +30,8 @@ public interface IUserDao {
     List<User> findByIds(QueryVO queryVO);
 
     List<User> findAllUserAccount();
+
+    List<User> findAllUserRole();
+
+    List<User> findAllUserAccountLazy();
 }

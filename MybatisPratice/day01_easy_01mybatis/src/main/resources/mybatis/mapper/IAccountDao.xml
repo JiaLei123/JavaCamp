@@ -18,6 +18,9 @@
         SELECT * from account;
     </select>
 
+    <select id="findALlByUid" parameterType="Integer" resultType="com.jialei.easymybatis.dataobject.Account">
+        SELECT * from account where uid=#{uid}
+    </select>
 
     <select id="findAllAccountUser" resultType="com.jialei.easymybatis.dataobject.AccountUser">
         SELECT u.*, a.id as aid, a.uid, a.money from account a, user u where u.id = a.uid;
@@ -26,4 +29,5 @@
     <select id="findAllAccountUser1" resultMap="accountUserMap">
         SELECT u.*, a.id as aid, a.uid, a.money from account a, user u where u.id = a.uid;
     </select>
+
 </mapper>

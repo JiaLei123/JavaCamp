@@ -16,6 +16,32 @@
         </collection>
     </resultMap>
 
+    <resultMap id="userMapLazy" type="com.jialei.easymybatis.dataobject.User">
+        <id property="id" column="id"></id>
+        <result property="username" column="username"></result>
+        <result property="sex" column="sex"></result>
+        <result property="birthday" column="birthday"></result>
+        <result property="address" column="address"></result>
+        <collection property="accounts" ofType="com.jialei.easymybatis.dataobject.Account" column="id" select="com.jialei.easymybatis.dao.IAccountDao.findALlByUid">
+            <id property="id" column="aid"></id>
+            <result property="uid" column="uid"></result>
+            <result property="money" column="money"></result>
+        </collection>
+    </resultMap>
+
+    <resultMap id="userRoleMap" type="com.jialei.easymybatis.dataobject.User">
+        <id property="id" column="id"></id>
+        <result property="username" column="username"></result>
+        <result property="sex" column="sex"></result>
+        <result property="birthday" column="birthday"></result>
+        <result property="address" column="address"></result>
+        <collection property="roles" ofType="com.jialei.easymybatis.dataobject.Role">
+            <id property="id" column="rid"></id>
+            <result property="name" column="role_name"></result>
+            <result property="desc" column="role_desc"></result>
+        </collection>
+    </resultMap>
+
     <select id="findAll" resultType="com.jialei.easymybatis.dataobject.User">
         SELECT * from user;
     </select>
@@ -82,8 +108,8 @@
         select * from user
         <where>
             <if test="ids != null and ids.size() > 0">
-                <foreach collection="ids" open="and id in '(" close=")" item="uid" separator=",">
-                    #{uid}
+                <foreach collection="ids" open="id in '(" close=")" item="id" separator=",">
+                    #{id}
                 </foreach>
             </if>
         </where>
@@ -92,5 +118,16 @@
     <!-- 处理关联表的查询 -->
     <select id="findAllUserAccount" resultMap="userMap">
         select u.*, a.id as aid, a.uid, a.money from user u left join account a on u.id = a.uid
+    </select>
+
+    <select id="findAllUserRole" resultMap="userRoleMap">
+        select r.id as rid, r.role_name, r.role_desc, u.* from user u
+            left join user_role ur on u.id = ur.uid
+            left join role r on ur.rid = r.id
+    </select>
+
+
+    <select id="findAllUserAccountLazy" resultMap="userMapLazy">
+        select * from user ;
     </select>
 </mapper>

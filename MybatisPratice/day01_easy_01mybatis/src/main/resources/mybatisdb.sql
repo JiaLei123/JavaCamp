@@ -35,3 +35,30 @@ values
 (1, 41, 1000),
 (2, 42, 1000),
 (3, 41, 2000);
+
+CREATE TABLE role(
+    id int(11) NOT NULL auto_increment,
+    role_name varchar(32) NOT NULL  COMMENT '角色名称',
+    role_desc varchar(64) NOT NULL  COMMENT '角色描述',
+    PRIMARY KEY (id)
+);
+
+insert into role(id, role_name, role_desc)
+values
+(1, "院长", "管理学院"),
+(2, "总裁", "管理公司"),
+(3, "校长", "管理学校");
+
+CREATE TABLE user_role(
+    uid int(11) NOT NULL,
+    rid int(11) NOT NULL,
+    foreign key(uid) references user(id),
+    foreign key(rid) references role(id)
+);
+
+insert into user_role(uid, rid)
+values
+(41, 1),
+(42, 1),
+(41, 2);
+

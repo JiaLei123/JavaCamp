@@ -17,4 +17,6 @@ public class User {
     private String address;
 
     private List<Account> accounts;
+    private List<Role> roles;
+
 }

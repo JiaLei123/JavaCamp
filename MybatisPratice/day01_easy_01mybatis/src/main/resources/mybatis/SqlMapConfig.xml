@@ -6,6 +6,12 @@
 
     </properties>
 
+    <settings>
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <setting name="aggressiveLazyLoading" value="false"/>
+    </settings>
+
+
     <typeAliases>
         <package name="com.jialei.easymybatis.dataobject"/>
 <!--        <typeAlias type="com.jialei.easymybatis.dataobject.User" alias="User"></typeAlias>-->
@@ -21,11 +27,14 @@
             </dataSource>
         </environment>
     </environments>
+    
+
 
     <mappers>
         <mapper resource="mybatis/mapper/IUser1Dao.xml"></mapper>
         <mapper resource="mybatis/mapper/IUserDao.xml"></mapper>
         <mapper resource="mybatis/mapper/IAccountDao.xml"></mapper>
+        <mapper resource="mybatis/mapper/IRoleDao.xml"></mapper>
         <mapper class="com.jialei.easymybatis.dao.IUserDao2"/>
     </mappers>
 </configuration>

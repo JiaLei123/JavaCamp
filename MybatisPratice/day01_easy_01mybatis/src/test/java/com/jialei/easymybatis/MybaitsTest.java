@@ -2,12 +2,13 @@ package com.jialei.easymybatis;
 
 import com.jialei.easymybatis.VO.QueryVO;
 import com.jialei.easymybatis.dao.IAccountDao;
+import com.jialei.easymybatis.dao.IRoleDao;
 import com.jialei.easymybatis.dao.IUserDao;
 import com.jialei.easymybatis.dao.IUserDao2;
 import com.jialei.easymybatis.dataobject.Account;
 import com.jialei.easymybatis.dataobject.AccountUser;
+import com.jialei.easymybatis.dataobject.Role;
 import com.jialei.easymybatis.dataobject.User;
-import com.jialei.easymybatis.dataobject.User1;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -209,4 +210,24 @@ public class MybaitsTest {
         accounts.forEach(a-> System.out.println(a));
     }
 
+    @Test
+    public void testFindAllRole(){
+        IRoleDao roleDao = sqlSession.getMapper(IRoleDao.class);
+        List<Role> roles = roleDao.findAll();
+        roles.forEach(a-> System.out.println(a));
+    }
+
+    @Test
+    public void testFindAllUserRole(){
+        IUserDao userDao = sqlSession.getMapper(IUserDao.class);
+        List<User> accounts = userDao.findAllUserRole();
+        accounts.forEach(a-> System.out.println(a));
+    }
+
+    @Test
+    public void testFindAllUserAccountLazy(){
+        IUserDao userDao = sqlSession.getMapper(IUserDao.class);
+        List<User> users = userDao.findAllUserAccountLazy();
+        //users.forEach(a-> System.out.println(a));
+    }
 }
