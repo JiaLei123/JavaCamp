@@ -2,6 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jialei.easymybatis.dao.IUserDao">
+    <cache/>
 
     <resultMap id="userMap" type="com.jialei.easymybatis.dataobject.User">
         <id property="id" column="id"></id>
@@ -42,7 +43,7 @@
         </collection>
     </resultMap>
 
-    <select id="findAll" resultType="com.jialei.easymybatis.dataobject.User">
+    <select id="findAll" resultType="com.jialei.easymybatis.dataobject.User" useCache="true">
         SELECT * from user;
     </select>
 

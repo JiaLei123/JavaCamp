@@ -230,4 +230,33 @@ public class MybaitsTest {
         List<User> users = userDao.findAllUserAccountLazy();
         //users.forEach(a-> System.out.println(a));
     }
+
+    @Test
+    public void testFindAllCache(){
+        IUserDao userDao = sqlSession.getMapper(IUserDao.class);
+        List<User> users = userDao.findAll();
+        users.forEach(a-> System.out.println(a));
+
+        List<User> users2 = userDao.findAll();
+        System.out.println(users == users2);
+    }
+
+    @Test
+    public void testFindAllSecondCache() throws IOException {
+        InputStream in1 = Resources.getResourceAsStream("mybatis/SqlMapConfig.xml");
+        SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();
+        SqlSessionFactory factory = builder.build(in1);
+        SqlSession session1 = factory.openSession();
+        IUserDao userDao1 = session1.getMapper(IUserDao.class);
+        List<User> users1 = userDao1.findAll();
+        users1.forEach(a-> System.out.println(a));
+        session1.close();
+
+        SqlSession session2 = factory.openSession();
+        IUserDao userDao2 = session2.getMapper(IUserDao.class);
+        List<User> users2 = userDao2.findAll();
+        users2.forEach(a-> System.out.println(a));
+        session2.close();
+        in1.close();
+    }
 }
