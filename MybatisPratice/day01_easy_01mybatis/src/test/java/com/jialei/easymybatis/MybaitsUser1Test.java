@@ -1,10 +1,6 @@
 package com.jialei.easymybatis;
 
-import com.jialei.easymybatis.VO.QueryVO;
 import com.jialei.easymybatis.dao.IUser1Dao;
-import com.jialei.easymybatis.dao.IUserDao;
-import com.jialei.easymybatis.dao.IUserDao2;
-import com.jialei.easymybatis.dataobject.User;
 import com.jialei.easymybatis.dataobject.User1;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -16,7 +12,6 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Date;
 import java.util.List;
 
 public class MybaitsUser1Test {

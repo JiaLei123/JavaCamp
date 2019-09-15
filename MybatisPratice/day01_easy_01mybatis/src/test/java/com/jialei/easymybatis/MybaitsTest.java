@@ -4,7 +4,6 @@ import com.jialei.easymybatis.VO.QueryVO;
 import com.jialei.easymybatis.dao.IAccountDao;
 import com.jialei.easymybatis.dao.IRoleDao;
 import com.jialei.easymybatis.dao.IUserDao;
-import com.jialei.easymybatis.dao.IUserDao2;
 import com.jialei.easymybatis.dataobject.Account;
 import com.jialei.easymybatis.dataobject.AccountUser;
 import com.jialei.easymybatis.dataobject.Role;
@@ -40,18 +39,6 @@ public class MybaitsTest {
         sqlSession.close();
         in.close();
     }
-
-    @Test
-    public void testFindAll() throws IOException {
-        IUserDao userDao = sqlSession.getMapper(IUserDao.class);
-        List<User> users = userDao.findAll();
-        users.forEach(user-> System.out.println( user));
-
-        IUserDao2 userDao2 = sqlSession.getMapper(IUserDao2.class);
-        List<User> users2 = userDao2.findAll();
-        users2.forEach(user-> System.out.println( user));
-    }
-
 
     @Test
     public void testSaveUser() throws IOException {

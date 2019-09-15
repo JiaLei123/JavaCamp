@@ -36,6 +36,7 @@
         <mapper resource="mybatis/mapper/IUserDao.xml"></mapper>
         <mapper resource="mybatis/mapper/IAccountDao.xml"></mapper>
         <mapper resource="mybatis/mapper/IRoleDao.xml"></mapper>
-        <mapper class="com.jialei.easymybatis.dao.IUserDao2"/>
+        <mapper class="com.jialei.easymybatis.dao.IUserAnnotationDao"/>
+        <mapper class="com.jialei.easymybatis.dao.IAccountAnnotationDao"/>
     </mappers>
 </configuration>
