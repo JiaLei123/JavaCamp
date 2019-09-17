@@ -1,14 +1,12 @@
 package jialei.com.spitter.web;
 
+import com.alibaba.fastjson.JSON;
 import jialei.com.spitter.Spittle;
 import jialei.com.spitter.data.SpittleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Date;
@@ -28,6 +26,7 @@ public class SpittleController {
      * Test only
      * @return
      */
+
     @RequestMapping(value = "/gets", method = RequestMethod.GET)
     public String spittles(Model model){
         model.addAttribute(spittleRepository.findSpittles(Long.MAX_VALUE, 20));
@@ -50,9 +49,10 @@ public class SpittleController {
      *
      * @return
      */
+    @ResponseBody
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public List<Spittle> spittlesName(){
-        return spittleRepository.findSpittles(Long.MAX_VALUE, 20);
+    public String spittlesName(){
+        return JSON.toJSONString(spittleRepository.findSpittles(Long.MAX_VALUE, 20)) ;
     }
 
 
