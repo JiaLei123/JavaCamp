@@ -24,7 +24,7 @@
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
                 <property name="url" value="jdbc:mysql://localhost:3306/cloudDB01"/>
                 <property name="username" value="root"/>
-                <property name="password" value="Motorola123!"/>
+                <property name="password" value="111111"/>
             </dataSource>
         </environment>
     </environments>
