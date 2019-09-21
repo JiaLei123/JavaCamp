@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <html>
@@ -18,13 +18,14 @@
 </head>
 <body>
     <h1>Register</h1>
-    <form method="POST">
-        First Name: <input type="text" name="firstName" /><br/>
-        Last Name: <input type="text" name="lastName" /><br/>
-        Email: <input type="email" name="email" /><br/>
-        Username: <input type="text" name="username" /><br/>
-        Password: <input type="password" name="password" /><br/>
+    <sf:form method="POST" commandName="spitter">
+        <sf:errors path="*" element="div" cssClass="errors"/>
+        First Name: <sf:input path="firstName"/><br/>
+        Last Name: <sf:input path="lastName" /><br/>
+        Email: <sf:input type="email" path="email" /><br/>
+        Username: <sf:input type="text" path="username" cssErrorClass="error"/><br/>
+        Password: <sf:password path="password" /><br/>
         <input type="submit" value="Register" />
-    </form>
+    </sf:form>
 </body>
 </html>

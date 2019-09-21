@@ -1,4 +1,4 @@
-package jialei.com.spitter.web;
+package jialei.com.spitter.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,9 +12,9 @@ import javax.validation.constraints.Size;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class SpittleForm {
+public class SpittleVO {
     @NotNull
-    @Size(min=1, max=140)
+    @Size(min=5, max=140)
     private String message;
 
     @Min(-180)

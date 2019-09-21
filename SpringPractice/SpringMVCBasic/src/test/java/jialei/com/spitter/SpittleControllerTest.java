@@ -1,6 +1,7 @@
 package jialei.com.spitter;
 
 import jialei.com.spitter.data.SpittleRepository;
+import jialei.com.spitter.model.Spittle;
 import jialei.com.spitter.web.SpittleController;
 import org.junit.Test;
 import org.mockito.Mockito;

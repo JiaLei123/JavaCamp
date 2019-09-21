@@ -1,6 +1,6 @@
 package jialei.com.spitter.web;
 
-import jialei.com.spitter.Spitter;
+import jialei.com.spitter.model.Spitter;
 import jialei.com.spitter.data.SpitterRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,28 +21,15 @@ public class SpitterController {
     private SpitterRepository spitterRepository;
 
     @RequestMapping(value = "register", method = RequestMethod.GET)
-    public String showRegistrationFrom(){
+    public String showRegistrationFrom(Model model){
+        model.addAttribute(new Spitter());
         return "registerFrom";
-    }
-
-    @RequestMapping(value = "registerNew", method = RequestMethod.GET)
-    public String showRegistrationFromNew(){
-        return "registerFromNew";
     }
 
     @RequestMapping(value = "register", method = RequestMethod.POST)
     public String processRegistration(@Valid Spitter spitter, Errors errors){
         if(errors.hasErrors()){
             return "registerFrom";
-        }
-        spitterRepository.save(spitter);
-        return "redirect:/spitter/" + spitter.getUsername();
-    }
-
-    @RequestMapping(value = "registerNew", method = RequestMethod.POST)
-    public String processRegistrationNew(@Valid Spitter spitter, Errors errors){
-        if(errors.hasErrors()){
-            return "registerFromNew";
         }
         spitterRepository.save(spitter);
         return "redirect:/spitter/" + spitter.getUsername();

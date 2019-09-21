@@ -1,6 +1,6 @@
 package jialei.com.spitter.data;
 
-import jialei.com.spitter.Spittle;
+import jialei.com.spitter.model.Spittle;
 
 import java.util.List;
 

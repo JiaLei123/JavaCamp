@@ -11,6 +11,8 @@
     <modules>
         <module>AspectBasic</module>
         <module>SpringMVCBasic</module>
+        <module>SpringMVCTiles</module>
+        <module>SpringMVCThymeleaf</module>
     </modules>
 
 

@@ -1,6 +1,6 @@
 package jialei.com.spitter.data;
 
-import jialei.com.spitter.Spitter;
+import jialei.com.spitter.model.Spitter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.core.RowMapper;

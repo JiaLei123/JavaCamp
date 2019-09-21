@@ -1,13 +1,16 @@
 package jialei.com.spitter.web;
 
 import com.alibaba.fastjson.JSON;
-import jialei.com.spitter.Spittle;
 import jialei.com.spitter.data.SpittleRepository;
+import jialei.com.spitter.model.Spittle;
+import jialei.com.spitter.model.SpittleVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Date;
 
@@ -69,7 +72,10 @@ public class SpittleController {
     }
 
     @RequestMapping(method=RequestMethod.POST)
-    public String saveSpittle(SpittleForm form, Model model) throws Exception {
+    public String saveSpittle(@Valid SpittleVO form, Errors errors, Model model) throws Exception {
+        if(errors.hasErrors()){
+            return "errors";
+        }
         spittleRepository.save(new Spittle(form.getMessage(), new Date()));
         return "redirect:/spittles";
     }

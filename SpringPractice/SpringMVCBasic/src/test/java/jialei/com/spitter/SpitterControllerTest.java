@@ -1,11 +1,11 @@
 package jialei.com.spitter;
 
 import jialei.com.spitter.data.SpitterRepository;
+import jialei.com.spitter.model.Spitter;
 import jialei.com.spitter.web.SpitterController;
 import org.junit.Test;
 import org.mockito.Mockito;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MockMvcBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
