@@ -3,10 +3,7 @@
  */
 package com.jialei.myspringboot;
 
-import com.jialei.myspringboot.bean.Person;
-import com.jialei.myspringboot.bean.PersonOutSide;
-import com.jialei.myspringboot.bean.PersonValid;
-import com.jialei.myspringboot.bean.PersonValue;
+import com.jialei.myspringboot.bean.*;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,6 +24,9 @@ public class ReadConfigTest {
     private Person person;
 
     @Autowired
+    private PersonDev personDev;
+
+    @Autowired
     private PersonValue personValue;
 
     //@Autowired
@@ -44,6 +44,17 @@ public class ReadConfigTest {
         Assert.assertEquals(person.getLastName(), "testName");
     }
 
+    @Test
+    public void testPersonBlock(){
+        System.out.println(person);
+        Assert.assertEquals((int)person.getAge(), 15);
+    }
+
+    @Test
+    public void testPersonDev(){
+        System.out.println(personDev);
+        Assert.assertEquals(personDev.getLastName(), "testName dev");
+    }
     @Test
     public void testPersonValue(){
         System.out.println(personValue);

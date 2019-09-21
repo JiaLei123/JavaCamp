@@ -1,0 +1,14 @@
+persondev:
+  lastName: testName dev
+  age: 10
+  boss: false
+  birth: 2019/1/11
+  maps:
+    key1: value1
+    key2: value2
+  lists:
+    - item1
+    - item2
+  dog:
+    name: test dog
+    age: 5

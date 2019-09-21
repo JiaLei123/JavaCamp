@@ -13,6 +13,23 @@ person:
     name: test dog
     age: 5
 
+
 personValid:
   lastName: testName
   age: 10
+
+spring:
+  profiles:
+    active: dev
+
+---
+person:
+  age: 15
+spring.profiles: dev
+
+---
+person:
+  lastName: testName prod
+  age: 10
+  boss: false
+spring.profiles: prod
