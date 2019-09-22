@@ -1,7 +1,7 @@
 package jialei.com.spitter.web;
 
-import jialei.com.spitter.model.Spitter;
 import jialei.com.spitter.data.SpitterRepository;
+import jialei.com.spitter.model.Spitter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
