@@ -22,8 +22,7 @@ spring:
   profiles:
     active: dev
 
-server:
-  port:
+debug: true
 ---
 person:
   age: 15
