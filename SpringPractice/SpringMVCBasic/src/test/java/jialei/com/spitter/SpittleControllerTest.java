@@ -20,7 +20,7 @@ import java.util.List;
 import static org.mockito.Mockito.*;
 
 public class SpittleControllerTest {
-    @Test
+    //@Test
     public void shouldShowRecentSpittles() throws Exception {
         List<Spittle> expectedSpittles = createSpittleList(20);
         SpittleRepository mockRepository = mock(SpittleRepository.class);

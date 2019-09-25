@@ -21,7 +21,7 @@ public class SpitterControllerTest {
         SpitterController controller = new SpitterController();
         MockMvc mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/jialei.com.jialei.com.spitter/register")).
+        mockMvc.perform(MockMvcRequestBuilders.get("/spitter/register")).
                 andExpect(MockMvcResultMatchers.view().name("registerFrom"));
     }
 
@@ -40,12 +40,12 @@ public class SpitterControllerTest {
 
         MockMvc mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
 
-        mockMvc.perform(MockMvcRequestBuilders.post("/jialei.com.jialei.com.spitter/register")
+        mockMvc.perform(MockMvcRequestBuilders.post("/spitter/register")
                 .param("firstName", "Jack")
                 .param("lastName", "Bauer")
                 .param("username", "jbauer")
                 .param("password", "24Hours"))
-                .andExpect(MockMvcResultMatchers.redirectedUrl("/jialei.com.jialei.com.spitter/jbauer"));
+                .andExpect(MockMvcResultMatchers.redirectedUrl("/spitter/jbauer"));
 
     }
 }

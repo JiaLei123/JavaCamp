@@ -52,7 +52,6 @@ public class SpittleController {
      *
      * @return
      */
-    @ResponseBody
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String spittlesName(){
         return JSON.toJSONString(spittleRepository.findSpittles(Long.MAX_VALUE, 20)) ;

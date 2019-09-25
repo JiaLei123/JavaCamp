@@ -32,7 +32,7 @@ public class SpitterController {
             return "registerFrom";
         }
         spitterRepository.save(spitter);
-        return "redirect:/jialei.com.spitter/" + spitter.getUsername();
+        return "redirect:/spitter/" + spitter.getUsername();
     }
 
     @RequestMapping(value = "/{username}", method = RequestMethod.GET)
