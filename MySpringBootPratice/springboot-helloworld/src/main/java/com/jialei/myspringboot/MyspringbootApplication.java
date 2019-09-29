@@ -14,7 +14,11 @@ public class MyspringbootApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MyspringbootApplication.class, args);
 		Logger logger = LoggerFactory.getLogger(MyspringbootApplication.class);
+		logger.trace("run application");
+		logger.debug("run application");
 		logger.info("run application");
+		logger.warn("run application");
+		logger.error("run application");
 	}
 
 

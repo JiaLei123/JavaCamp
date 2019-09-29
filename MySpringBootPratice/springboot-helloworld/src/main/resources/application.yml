@@ -22,7 +22,12 @@ spring:
   profiles:
     active: dev
 
-debug: true
+#debug: true
+
+logging:
+  level: trace
+
+
 ---
 person:
   age: 15
