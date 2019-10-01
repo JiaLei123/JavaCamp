@@ -25,6 +25,13 @@
 
         <label th:class="${#fields.hasErrors('password')}? 'error'">Password:</label>
         <input type="password" th:field="*{password}" th:class="${#fields.hasErrors('password')}? 'error'"/><br/>
+
+        <label>Profile Picture</label>:
+        <input type="file"
+               name="profilePicture"
+               accept="image/jpeg,image/png,image/gif" /><br/>
+
+
         <input type="submit" value="Register" />
     </form>
 </body>

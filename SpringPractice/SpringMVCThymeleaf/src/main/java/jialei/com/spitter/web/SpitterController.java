@@ -9,6 +9,8 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 
@@ -27,12 +29,12 @@ public class SpitterController {
     }
 
     @RequestMapping(value = "register", method = RequestMethod.POST)
-    public String processRegistration(@Valid Spitter spitter, Errors errors){
+    public String processRegistration(@Valid Spitter spitter, @RequestPart("profilePicture") MultipartFile profilePicture, Errors errors){
         if(errors.hasErrors()){
             return "registerFrom";
         }
         spitterRepository.save(spitter);
-        return "redirect:/jialei.com.spitter/" + spitter.getUsername();
+        return "redirect:/spitter/" + spitter.getUsername();
     }
 
     @RequestMapping(value = "/{username}", method = RequestMethod.GET)
