@@ -1,5 +1,6 @@
 package jialei.com.spitter.data;
 
+import jialei.com.spitter.model.DuplicateSpittleException;
 import jialei.com.spitter.model.Spittle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -36,6 +37,11 @@ public class JdbcSpittleRepository implements SpittleRepository {
     }
 
     public void save(Spittle spittle) {
+        List<Spittle> existSpittle = findSpittles(spittle.getMessage());
+        if(existSpittle.size() > 0){
+            throw new DuplicateSpittleException();
+        }
+
         jdbc.update(
                 "insert into Spittle (message, created_at, latitude, longitude)" +
                         " values (?, ?, ?, ?)",
@@ -45,12 +51,21 @@ public class JdbcSpittleRepository implements SpittleRepository {
                 spittle.getLongitude());
     }
 
+    public List<Spittle> findSpittles(String message){
+        return jdbc.query(
+                "select id, message, created_at, latitude, longitude" +
+                        " from Spittle" +
+                        " where message = ?",
+                new SpittleRowMapper(), message);
+    }
+
     public Spittle findOne(long id) {
-        return jdbc.queryForObject(
+         List<Spittle> spittles = jdbc.query(
                 "select id, message, created_at, latitude, longitude" +
                         " from Spittle" +
                         " where id = ?",
                 new SpittleRowMapper(), id);
+        return spittles.size()>0? spittles.get(0):null;
     }
 
 

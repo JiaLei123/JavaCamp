@@ -11,5 +11,8 @@ public interface SpittleRepository {
 
     Spittle findOne(long id);
 
+    List<Spittle> findSpittles(String message);
+
     void save(Spittle spittle);
+
 }

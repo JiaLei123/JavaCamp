@@ -2,7 +2,9 @@ package jialei.com.spitter.web;
 
 import com.alibaba.fastjson.JSON;
 import jialei.com.spitter.data.SpittleRepository;
+import jialei.com.spitter.model.DuplicateSpittleException;
 import jialei.com.spitter.model.Spittle;
+import jialei.com.spitter.model.SpittleNotFoundException;
 import jialei.com.spitter.model.SpittleVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -67,8 +69,22 @@ public class SpittleController {
 
     @RequestMapping(value = "/show/{spittleId}", method = RequestMethod.GET)
     public String showSpittle(@PathVariable("spittleId") Long spittleId, Model model){
-        model.addAttribute(spittleRepository.findOne(spittleId));
+        Spittle spittle = spittleRepository.findOne(spittleId);
+        if(null == spittle){
+            throw new SpittleNotFoundException();
+        }
+        model.addAttribute(spittle);
         return "spittle";
+    }
+
+    @RequestMapping(value = "/detail", method = RequestMethod.GET)
+    public String spittleDetail(@RequestParam("message") String message, Model model){
+        List<Spittle> spittles = spittleRepository.findSpittles(message);
+        if(null == spittles){
+            throw new SpittleNotFoundException();
+        }
+        model.addAttribute("spittleList", spittles);
+        return "spittleList";
     }
 
     @RequestMapping(method=RequestMethod.POST)
@@ -78,5 +94,10 @@ public class SpittleController {
         }
         spittleRepository.save(new Spittle(form.getMessage(), new Date()));
         return "redirect:/spittles";
+    }
+
+    @ExceptionHandler(DuplicateSpittleException.class)
+    public String handleDuplicteSpittle(){
+        return "error/duplicate";
     }
 }
