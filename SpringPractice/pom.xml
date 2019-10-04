@@ -13,6 +13,7 @@
         <module>SpringMVCBasic</module>
         <module>SpringMVCTiles</module>
         <module>SpringMVCThymeleaf</module>
+        <module>SpringPizza</module>
     </modules>
 
 
