@@ -1,6 +1,7 @@
 package com.jialei.myspringboot;
 
 import com.jialei.myspringboot.bean.Person;
+import com.jialei.myspringboot.util.LoggerUtil;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -19,6 +20,8 @@ public class MyspringbootApplication {
 		logger.info("run application");
 		logger.warn("run application");
 		logger.error("run application");
+
+		LoggerUtil.error(logger, "different error log");
 	}
 
 
