@@ -15,6 +15,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class hello {
 
+    @RequestMapping("sucess")
+    public String sucess(){
+        return "sucess";
+    }
+
     @RequestMapping("/hello")
     @ResponseBody
     public String Hello(){

@@ -22,6 +22,7 @@ spring:
   profiles:
     active: dev
 
+
 #debug: true
 
 logging:
@@ -29,6 +30,10 @@ logging:
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{50} %line  == %X{UUID} == - %m%n"
 
+
+server:
+  port: 8088
+  context-path: /crud
 
 ---
 person:
