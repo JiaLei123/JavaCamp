@@ -25,6 +25,7 @@ public class MyspringbootApplication {
 	}
 
 
+
 	@Bean
 	public Person getPerson(){
 		return new Person();

@@ -1,4 +1,3 @@
-
 package com.jialei.myspringboot.bean;
 
 import lombok.Data;

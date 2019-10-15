@@ -21,14 +21,20 @@ personValid:
 spring:
   profiles:
     active: dev
+  thymeleaf:
+    cache=false
+  messages:
+    basename: i18n.login
+  mvc:
+    locale: en_US
 
-
-#debug: true
 
 logging:
   level: trace
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{50} %line  == %X{UUID} == - %m%n"
+
+
 
 
 server:

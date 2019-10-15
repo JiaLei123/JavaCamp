@@ -9,7 +9,7 @@ import java.util.Arrays;
 @Controller
 public class HelloController {
 
-    @RequestMapping
+    @RequestMapping("sucess")
     public String sucess(Model model){
         // classpath:/templates/sucess.html
         model.addAttribute("hello", "你好");
