@@ -33,13 +33,16 @@
 
 </head>
 <body class="text-center">
-<form class="form-signin">
+<form class="form-signin" th:action="@{/user/login}" method="post">
   <img class="mb-4" src="https://getbootstrap.com/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
   <h1 class="h3 mb-3 font-weight-normal" th:text="#{login.tip}">Please sign in</h1>
+
+  <p style="color: red" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+
   <label for="inputEmail" class="sr-only">Email address</label>
-  <input type="email" id="inputEmail" class="form-control" th:placeholder="#{login.username}" required autofocus>
+  <input type="text" id="inputEmail" class="form-control" name="username" th:placeholder="#{login.username}" required autofocus>
   <label for="inputPassword" class="sr-only">Password</label>
-  <input type="password" id="inputPassword" class="form-control" th:placeholder="#{login.password}" required>
+  <input type="password" id="inputPassword" class="form-control" name="password" th:placeholder="#{login.password}" required>
   <div class="checkbox mb-3">
     <label>
       <input type="checkbox" value="remember-me"> [[#{login.remember}]]
@@ -48,8 +51,8 @@
   <button class="btn btn-lg btn-primary btn-block" type="submit" th:text="#{login.btn}">Sign in</button>
   <p class="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
 
-  <a class="btn btn-sm" th:href="@{/main(l='zh_CN')}">中文</a>
-  <a class="btn btn-sm" th:href="@{/main(l='en_US')}">English</a>
+  <a class="btn btn-sm" th:href="@{/login(l='zh_CN')}">中文</a>
+  <a class="btn btn-sm" th:href="@{/login(l='en_US')}">English</a>
 </form>
 
 </body>
