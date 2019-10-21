@@ -27,6 +27,8 @@ spring:
     basename: i18n.login
   mvc:
     locale: en_US
+    date-format: yyyy-mm-dd
+
 
 
 logging:

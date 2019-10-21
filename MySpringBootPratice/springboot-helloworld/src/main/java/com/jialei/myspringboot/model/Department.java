@@ -1,7 +1,8 @@
 package com.jialei.myspringboot.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+        import lombok.AllArgsConstructor;
+        import lombok.Data;
+        import lombok.NoArgsConstructor;
 
 /**
  *
@@ -10,8 +11,14 @@ import lombok.Data;
  */
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Department {
     private Integer id;
     private String departmentName;
+
+    //public Department(Integer id, String departmentName){
+    //    this.id = id;
+    //    this.departmentName = departmentName;
+    //}
 
 }
