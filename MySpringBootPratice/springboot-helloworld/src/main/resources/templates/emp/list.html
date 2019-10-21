@@ -83,7 +83,10 @@
                         <td th:text="${#dates.format(emp.birth, 'dd/MM/yyyy')}">sit</td>
                         <td>
                             <a class="btn btn-sm btn-primary" th:href="@{/emp/} + ${emp.id}">编辑</a>
-                            <button class="btn btn-sm btn-warning">删除</button>
+<!--                            <form th:action="@{/emp/} + ${emp.id}" method="post">-->
+<!--                                <input name="_method" value="delete" type="hidden">-->
+<!--                                <button type="submit" class="btn btn-sm btn-warning">删除</button>-->
+<!--                            </form>-->
                         </td>
                     </tr>
 
