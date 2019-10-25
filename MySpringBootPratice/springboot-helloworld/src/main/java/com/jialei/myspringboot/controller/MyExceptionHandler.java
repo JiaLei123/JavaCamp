@@ -33,6 +33,7 @@ public class MyExceptionHandler {
         map.put("message", ex.getMessage());
 
         request.setAttribute("javax.servlet.error.status_code", 500);
+        request.setAttribute("ext", map);
 
         return "forward:/error";
     }
