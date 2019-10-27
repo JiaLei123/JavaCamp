@@ -2,6 +2,8 @@ package com.jialei.myspringboot.config;
 
 import com.jialei.myspringboot.component.LoginHandlerInterceptor;
 import com.jialei.myspringboot.component.MyLocaleResolver;
+import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
+import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 import com.jialei.myspringboot.filter.MyFilter;
 import com.jialei.myspringboot.listener.MyListener;
 import com.jialei.myspringboot.servlet.MyServlet;
@@ -60,4 +62,15 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
     public LocaleResolver localeResolver(){
     	return new MyLocaleResolver();
     }
+
+    @Bean
+    public EmbeddedServletContainerCustomizer embeddedServletContainerCustomizer(){
+        return new EmbeddedServletContainerCustomizer() {
+            @Override
+            public void customize(ConfigurableEmbeddedServletContainer container) {
+                container.setPort(8083);
+            }
+        };
+    }
+
 }
