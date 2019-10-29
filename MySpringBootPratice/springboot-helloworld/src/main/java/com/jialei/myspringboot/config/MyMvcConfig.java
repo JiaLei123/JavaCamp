@@ -48,7 +48,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
     public FilterRegistrationBean myFilter(){
         FilterRegistrationBean registrationBean = new FilterRegistrationBean();
         registrationBean.setFilter(new MyFilter());
-        registrationBean.setUrlPatterns(Arrays.asList("/hello", "myservlet"));
+        registrationBean.setUrlPatterns(Arrays.asList("/hello", "/myservlet"));
         return registrationBean;
     }
 
