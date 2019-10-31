@@ -14,6 +14,7 @@
         <module>SpringMVCTiles</module>
         <module>SpringMVCThymeleaf</module>
         <module>SpringPizza</module>
+        <module>SpringMVCXMLThymeleaf</module>
     </modules>
 
 
