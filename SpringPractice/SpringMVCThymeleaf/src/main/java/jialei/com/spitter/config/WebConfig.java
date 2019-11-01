@@ -24,9 +24,6 @@ import java.io.IOException;
 @EnableWebMvc
 @ComponentScan("jialei.com.spitter.web")
 public class WebConfig extends WebMvcConfigurerAdapter {
-
-
-
     @Bean
     public TemplateEngine templateEngine(ITemplateResolver templateResolver){
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();

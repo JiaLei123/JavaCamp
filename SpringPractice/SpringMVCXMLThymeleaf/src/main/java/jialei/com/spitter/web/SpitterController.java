@@ -18,7 +18,7 @@ import java.io.File;
 import java.io.IOException;
 
 @Controller
-@RequestMapping("/jialei/com/spitter")
+@RequestMapping("/spitter")
 public class SpitterController {
 
     @Autowired
