@@ -11,7 +11,7 @@
     <div id="header" th:include="page :: header"></div>
 
     <h1>Spit it out...</h1>
-    <form method="POST" name="spittleForm">
+    <form method="POST" name="spittleForm" th:action="@{/spittles}">
         <input type="hidden" name="latitude">
         <input type="hidden" name="longitude">
         <textarea name="message" cols="80" rows="5"></textarea><br/>

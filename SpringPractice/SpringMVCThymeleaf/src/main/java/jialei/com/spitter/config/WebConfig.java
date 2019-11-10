@@ -12,6 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.thymeleaf.ITemplateEngine;
 import org.thymeleaf.TemplateEngine;
+import org.thymeleaf.extras.springsecurity3.dialect.SpringSecurityDialect;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
 import org.thymeleaf.templateresolver.ITemplateResolver;
@@ -28,6 +29,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     public TemplateEngine templateEngine(ITemplateResolver templateResolver){
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
         templateEngine.setTemplateResolver(templateResolver);
+        templateEngine.addDialect(new SpringSecurityDialect());
         return templateEngine;
     }
 
