@@ -18,6 +18,10 @@ personValid:
   lastName: testName
   age: 10
 
+server:
+  port: 8088
+  context-path: /crud
+
 spring:
   profiles:
     active: dev
@@ -33,7 +37,7 @@ spring:
     username: root
     url: jdbc:mysql://localhost:3306/cloudDB01
     driver-class-name: com.mysql.jdbc.Driver
-
+    type: com.alibaba.druid.pool.DruidDataSource
 
 
 logging:
@@ -42,9 +46,7 @@ logging:
     console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{50} %line %X{UUID} - %m%n"
 
 
-server:
-  port: 8088
-  context-path: /crud
+
 
 
 
