@@ -19,7 +19,23 @@
         </bean>
     </beans>
     <beans profile="test">
-        <jdbc:embedded-database id="dataSource" type="H2">
+
+        <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+            <property name="driverClassName" value="org.h2.Driver"/>
+            <!-- 基本属性 url、user、password -->
+            <property name="url" value="jdbc:h2:mem:spitter;MODE=MySql;DB_CLOSE_DELAY=-1"/>
+            <property name="username" value="sa"/>
+            <property name="password" value=""/>
+            <!-- 配置初始化大小、最小、最大 -->
+            <property name="initialSize" value="1"/>
+            <property name="minIdle" value="1"/>
+            <property name="maxActive" value="20"/>
+
+            <!-- 配置监控统计拦截的filters -->
+            <property name="filters" value="stat"/>
+        </bean>
+
+        <jdbc:embedded-database id="spitter" type="H2">
             <jdbc:script location="resources/schema.sql" />
         </jdbc:embedded-database>
     </beans>
