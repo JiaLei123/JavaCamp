@@ -1,8 +1,11 @@
 package jialei.com.spitter.config;
 
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 import javax.servlet.MultipartConfigElement;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
 public class SpitterWebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
@@ -25,5 +28,11 @@ public class SpitterWebAppInitializer extends AbstractAnnotationConfigDispatcher
     protected void customizeRegistration(ServletRegistration.Dynamic registration) {
         registration.setMultipartConfig(
                 new MultipartConfigElement("/tmp/spittr/uploads", 2097152, 4194304, 0));
+    }
+
+    @Override
+    public void onStartup(ServletContext servletContext) throws ServletException {
+        super.onStartup(servletContext);
+        servletContext.setInitParameter("spring.profiles.active", "test");
     }
 }
