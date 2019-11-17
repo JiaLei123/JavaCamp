@@ -38,6 +38,22 @@ spring:
     url: jdbc:mysql://localhost:3306/cloudDB01
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
+    initialSize: 5
+    minIdle: 5
+    maxWait: 600000
+    maxActive: 20
+    validationQuery: SELECT 1 FROM DUAL
+    testOnBorrow: false
+    testOnReturn: false
+    testWhileIdle: true
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 25200000
+    poolPreparedStatements: true
+    filters: stat, wall, log4j
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true; druid.stat.slowSqlMillis=500
+
 
 
 logging:
