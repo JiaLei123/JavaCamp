@@ -54,16 +54,15 @@ spring:
     useGlobalDataSourceStat: true
     connectionProperties: druid.stat.mergeSql=true; druid.stat.slowSqlMillis=500
 
-
-
 logging:
   level: trace
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{50} %line %X{UUID} - %m%n"
 
-
-
-
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mappers/RoleMapper.xml
+  type-aliases-package: com.jialei.myspringboot.model
 
 
 

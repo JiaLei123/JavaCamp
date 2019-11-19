@@ -2,13 +2,14 @@ package com.jialei.myspringboot;
 
 import com.jialei.myspringboot.bean.Person;
 import com.jialei.myspringboot.util.LoggerUtil;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
+@MapperScan("com.jialei.myspringboot.dao")
 @SpringBootApplication
 public class MyspringbootApplication {
 
