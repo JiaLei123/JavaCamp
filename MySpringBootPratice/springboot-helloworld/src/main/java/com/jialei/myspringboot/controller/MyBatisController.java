@@ -1,20 +1,14 @@
-/**
- * Alipay.com Inc. Copyright (c) 2004-2019 All Rights Reserved.
- */
 package com.jialei.myspringboot.controller;
 
 import com.jialei.myspringboot.dao.RoleDao;
 import com.jialei.myspringboot.model.Role;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.List;
-import java.util.Map;
 
 /**
  *
@@ -23,7 +17,7 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("mybatis")
-public class RoleController {
+public class MyBatisController {
 
     @Autowired
     private RoleDao roleDao;
