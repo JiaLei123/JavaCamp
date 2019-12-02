@@ -68,7 +68,10 @@ mybatis:
   mapper-locations: classpath:mybatis/mappers/RoleMapper.xml
   type-aliases-package: com.jialei.myspringboot.model
 
-
+jialei:
+  hello:
+    prefix: aaa
+    suffix: bbb
 
 
 ---
