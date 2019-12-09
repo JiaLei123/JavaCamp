@@ -8,9 +8,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @MapperScan("com.jialei.myspringboot.dao")
 @SpringBootApplication
+
 public class MyspringbootApplication {
 
 	public static void main(String[] args) {
