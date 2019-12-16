@@ -1,10 +1,9 @@
 package com.jialei.myspringboot;
 
-import com.jialei.myspringboot.dao.DepartmentDao;
-import com.jialei.myspringboot.dao.EmployeeDao;
+import com.jialei.myspringboot.demowebview.dao.DepartmentDao;
+import com.jialei.myspringboot.demowebview.dao.EmployeeDao;
 import com.jialei.myspringboot.model.Department;
 import com.jialei.myspringboot.model.Employee;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

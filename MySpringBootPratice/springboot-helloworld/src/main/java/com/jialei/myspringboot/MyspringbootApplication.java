@@ -1,18 +1,18 @@
 package com.jialei.myspringboot;
 
-import com.jialei.myspringboot.bean.Person;
+import com.jialei.myspringboot.demoreadconfig.bean.Person;
 import com.jialei.myspringboot.util.LoggerUtil;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
-@MapperScan("com.jialei.myspringboot.dao")
+@MapperScan("com.jialei.myspringboot.demomybatis.Dao")
 @SpringBootApplication
-
+@EnableCaching
 public class MyspringbootApplication {
 
 	public static void main(String[] args) {

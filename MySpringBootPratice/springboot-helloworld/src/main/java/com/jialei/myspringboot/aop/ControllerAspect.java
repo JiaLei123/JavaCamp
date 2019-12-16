@@ -1,13 +1,13 @@
-/**
- * Alipay.com Inc. Copyright (c) 2004-2019 All Rights Reserved.
- */
 package com.jialei.myspringboot.aop;
 
 import com.alibaba.fastjson.JSON;
+
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 /**
@@ -20,7 +20,9 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class ControllerAspect {
 
-    @Pointcut("execution(* com.jialei.myspringboot.controller.EmployeeController.*(..) )")
+    Logger logger = LoggerFactory.getLogger(ControllerAspect.class);
+
+    @Pointcut("execution(* com.jialei.myspringboot.demowebview.controller.EmployeeController.*(..) )")
     public void controllerAspect() {
     }
 
@@ -28,13 +30,13 @@ public class ControllerAspect {
     public Object around(ProceedingJoinPoint joinPoint){
         Object obj=null;
         Object[] params = joinPoint.getArgs();
-        System.out.println("环绕前: " + JSON.toJSONString(params));
+        logger.info("环绕前: " + JSON.toJSONString(params));
         try {
             obj=joinPoint.proceed(params);
         } catch (Throwable throwable) {
-            throwable.printStackTrace();
+            logger.warn(JSON.toJSONString(throwable));
         }
-        System.out.println("环绕后" + JSON.toJSONString(obj));
+        logger.info("环绕后" + JSON.toJSONString(obj));
         return obj;
     }
 }

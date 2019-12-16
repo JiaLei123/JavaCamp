@@ -1,9 +1,9 @@
-/**
- * Alipay.com Inc. Copyright (c) 2004-2019 All Rights Reserved.
- */
 package com.jialei.myspringboot;
 
-import com.jialei.myspringboot.bean.*;
+import com.jialei.myspringboot.demoreadconfig.bean.Person;
+import com.jialei.myspringboot.demoreadconfig.bean.PersonDev;
+import com.jialei.myspringboot.demoreadconfig.bean.PersonOutSide;
+import com.jialei.myspringboot.demoreadconfig.bean.PersonValue;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

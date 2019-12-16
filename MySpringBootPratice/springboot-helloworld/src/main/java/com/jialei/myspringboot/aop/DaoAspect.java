@@ -22,7 +22,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 public class DaoAspect {
-    @Pointcut("execution(* com.jialei.myspringboot.dao.RoleDao.*(..) )")
+    @Pointcut("execution(* com.jialei.myspringboot.demomybatis.Dao.RoleDao.*(..) )")
     public void controllerAspect() {
     }
 
