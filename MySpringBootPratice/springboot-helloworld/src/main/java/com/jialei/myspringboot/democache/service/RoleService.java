@@ -24,10 +24,29 @@ public class RoleService {
     @Autowired
     private RoleDao roleDao;
 
-
     @Cacheable(cacheNames = "roles")
     public Role getRolebyId(Integer id){
         logger.info("查询数据 id=" + id);
         return roleDao.getById(id);
     }
+
+    @Cacheable(cacheNames = "roles1", key = "#id")
+    public Role getRolebyId1(Integer id){
+        logger.info("查询数据 id=" + id);
+        return roleDao.getById(id);
+    }
+
+    @Cacheable(cacheNames = "roles2", key = "#root.methodName + '[' + #id +']'")
+    public Role getRolebyId2(Integer id){
+        logger.info("查询数据 id=" + id);
+        return roleDao.getById(id);
+    }
+
+    @Cacheable(cacheNames = {"roles3"}, condition = "#id > 1")
+    public Role getRolebyId3(Integer id){
+        logger.info("查询数据 id=" + id);
+        return roleDao.getById(id);
+    }
+
+
 }

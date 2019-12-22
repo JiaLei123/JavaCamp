@@ -27,6 +27,28 @@ public class CacheController {
         return role;
     }
 
+    @RequestMapping("query1/{id}")
+    @ResponseBody
+    public Role query1(@PathVariable("id") int id){
+        Role role = roleService.getRolebyId1(id);
+        return role;
+    }
+
+    @RequestMapping("query2/{id}")
+    @ResponseBody
+    public Role query2(@PathVariable("id") int id){
+        Role role = roleService.getRolebyId2(id);
+        return role;
+    }
+
+    @RequestMapping("query3/{id}")
+    @ResponseBody
+    public Role query3(@PathVariable("id") int id){
+        Role role = roleService.getRolebyId3(id);
+        return role;
+    }
+
+
     //@RequestMapping("insert")
     //@ResponseBody
     //public void insert(@RequestBody Role role){

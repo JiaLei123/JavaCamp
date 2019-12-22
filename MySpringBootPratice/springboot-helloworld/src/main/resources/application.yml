@@ -58,6 +58,8 @@ spring:
       ddl-auto: update
     show-sql: true
 
+logging.level.com.jialei.myspringboot.demomybatis.Dao: debug
+
 logging:
   level: trace
   pattern:
