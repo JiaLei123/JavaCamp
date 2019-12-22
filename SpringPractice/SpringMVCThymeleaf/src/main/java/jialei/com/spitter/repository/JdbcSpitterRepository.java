@@ -1,4 +1,4 @@
-package jialei.com.spitter.data;
+package jialei.com.spitter.repository;
 
 import jialei.com.spitter.model.Spitter;
 import org.springframework.beans.factory.annotation.Autowired;

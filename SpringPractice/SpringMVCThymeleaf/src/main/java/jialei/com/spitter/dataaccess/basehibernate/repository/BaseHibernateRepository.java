@@ -1,6 +1,6 @@
-package jialei.com.spitter.repository;
+package jialei.com.spitter.dataaccess.basehibernate.repository;
 
-import jialei.com.spitter.domain.SpittleDomain;
+import jialei.com.spitter.dataaccess.domain.SpittleDomain;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,13 +17,13 @@ import java.util.List;
  */
 @Repository
 @EnableTransactionManagement
-public class HibernateRepository {
+public class BaseHibernateRepository {
     @Autowired
     private SessionFactory sessionFactory;
 
     private Session currentSession(){
-        return sessionFactory.getCurrentSession();
-        //return sessionFactory.openSession();
+//        return sessionFactory.getCurrentSession();
+        return sessionFactory.openSession();
     }
 
     @Transactional

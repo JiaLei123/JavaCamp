@@ -18,8 +18,8 @@
             <property name="filters" value="stat"/>
         </bean>
     </beans>
-    <beans profile="test">
 
+    <beans profile="test">
         <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
             <property name="driverClassName" value="org.h2.Driver"/>
             <!-- 基本属性 url、user、password -->

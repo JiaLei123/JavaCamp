@@ -23,7 +23,7 @@ import java.io.IOException;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("jialei.com.spitter.web")
+@ComponentScan({"jialei.com.spitter.web", "jialei.com.spitter.dataaccess"})
 public class WebConfig extends WebMvcConfigurerAdapter {
     @Bean
     public TemplateEngine templateEngine(ITemplateResolver templateResolver){

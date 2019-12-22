@@ -1,4 +1,4 @@
-package jialei.com.spitter.domain;
+package jialei.com.spitter.dataaccess.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

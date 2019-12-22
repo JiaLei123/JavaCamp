@@ -1,13 +1,9 @@
-/**
- * Alipay.com Inc. Copyright (c) 2004-2019 All Rights Reserved.
- */
-package jialei.com.spitter.web.repository;
+package jialei.com.spitter.dataaccess.basehibernate.controller;
 
 import com.alibaba.fastjson.JSON;
-import jialei.com.spitter.domain.SpittleDomain;
-import jialei.com.spitter.repository.HibernateRepository;
+import jialei.com.spitter.dataaccess.domain.SpittleDomain;
+import jialei.com.spitter.dataaccess.basehibernate.repository.BaseHibernateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -22,11 +18,12 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("sql")
-public class SQLController {
+public class BaseHibernateController {
     @Autowired
-    private HibernateRepository hibernateRepository;
+    private BaseHibernateRepository hibernateRepository;
 
     @RequestMapping("findAll")
+    @ResponseBody
     public List<SpittleDomain> finAll(){
         return hibernateRepository.finAll();
     }

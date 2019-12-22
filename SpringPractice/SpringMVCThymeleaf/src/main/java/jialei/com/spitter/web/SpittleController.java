@@ -1,7 +1,7 @@
 package jialei.com.spitter.web;
 
 import com.alibaba.fastjson.JSON;
-import jialei.com.spitter.data.SpittleRepository;
+import jialei.com.spitter.repository.SpittleRepository;
 import jialei.com.spitter.model.DuplicateSpittleException;
 import jialei.com.spitter.model.Spittle;
 import jialei.com.spitter.model.SpittleNotFoundException;
