@@ -42,8 +42,14 @@ public class RoleService {
         return roleDao.getById(id);
     }
 
-    @Cacheable(cacheNames = {"roles3"}, condition = "#id > 1")
+    @Cacheable(cacheNames = {"roles3"}, condition = "#id > 1", unless = "#result == null ")
     public Role getRolebyId3(Integer id){
+        logger.info("查询数据 id=" + id);
+        return roleDao.getById(id);
+    }
+
+    @Cacheable(cacheNames = {"roles4"}, keyGenerator = "myKeyGenerator")
+    public Role getRolebyId4(Integer id){
         logger.info("查询数据 id=" + id);
         return roleDao.getById(id);
     }

@@ -48,6 +48,12 @@ public class CacheController {
         return role;
     }
 
+    @RequestMapping("query4/{id}")
+    @ResponseBody
+    public Role query4(@PathVariable("id") int id){
+        Role role = roleService.getRolebyId4(id);
+        return role;
+    }
 
     //@RequestMapping("insert")
     //@ResponseBody
