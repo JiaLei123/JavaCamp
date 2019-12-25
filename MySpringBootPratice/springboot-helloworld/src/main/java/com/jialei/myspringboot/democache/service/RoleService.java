@@ -9,6 +9,7 @@ import com.jialei.myspringboot.demomybatis.model.Role;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +29,12 @@ public class RoleService {
     public Role getRolebyId(Integer id){
         logger.info("查询数据 id=" + id);
         return roleDao.getById(id);
+    }
+
+    @CachePut(cacheNames = "roles", key = "#result.id")
+    public Role updateRole(Role role){
+        roleDao.insert(role);
+        return role;
     }
 
     @Cacheable(cacheNames = "roles1", key = "#id")
@@ -53,6 +60,8 @@ public class RoleService {
         logger.info("查询数据 id=" + id);
         return roleDao.getById(id);
     }
+
+
 
 
 }
