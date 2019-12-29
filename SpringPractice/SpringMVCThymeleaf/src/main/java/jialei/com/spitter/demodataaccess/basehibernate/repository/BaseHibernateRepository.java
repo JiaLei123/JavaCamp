@@ -1,6 +1,6 @@
-package jialei.com.spitter.dataaccess.basehibernate.repository;
+package jialei.com.spitter.demodataaccess.basehibernate.repository;
 
-import jialei.com.spitter.dataaccess.domain.SpittleDomain;
+import jialei.com.spitter.demodataaccess.domain.SpittleDomain;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;

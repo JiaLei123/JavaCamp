@@ -1,7 +1,7 @@
-package jialei.com.spitter.dataaccess.springdata.repository;
+package jialei.com.spitter.demodataaccess.springdata.repository;
 
 
-import jialei.com.spitter.dataaccess.domain.SpittleDomain;
+import jialei.com.spitter.demodataaccess.domain.SpittleDomain;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

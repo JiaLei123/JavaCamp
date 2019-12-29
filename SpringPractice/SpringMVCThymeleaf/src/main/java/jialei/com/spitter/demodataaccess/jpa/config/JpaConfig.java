@@ -1,4 +1,4 @@
-package jialei.com.spitter.dataaccess.jpa.config;
+package jialei.com.spitter.demodataaccess.jpa.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,8 +1,8 @@
-package jialei.com.spitter.dataaccess.basehibernate.controller;
+package jialei.com.spitter.demodataaccess.basehibernate.controller;
 
 import com.alibaba.fastjson.JSON;
-import jialei.com.spitter.dataaccess.domain.SpittleDomain;
-import jialei.com.spitter.dataaccess.basehibernate.repository.BaseHibernateRepository;
+import jialei.com.spitter.demodataaccess.domain.SpittleDomain;
+import jialei.com.spitter.demodataaccess.basehibernate.repository.BaseHibernateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

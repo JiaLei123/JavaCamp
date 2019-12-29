@@ -1,4 +1,4 @@
-package jialei.com.spitter.dataaccess.basehibernate.config;
+package jialei.com.spitter.demodataaccess.basehibernate.config;
 
 import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.Bean;

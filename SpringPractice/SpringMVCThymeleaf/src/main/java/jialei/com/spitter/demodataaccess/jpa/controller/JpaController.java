@@ -1,8 +1,8 @@
-package jialei.com.spitter.dataaccess.jpa.controller;
+package jialei.com.spitter.demodataaccess.jpa.controller;
 
 import com.alibaba.fastjson.JSON;
-import jialei.com.spitter.dataaccess.domain.SpittleDomain;
-import jialei.com.spitter.dataaccess.jpa.repository.MyJpaRepository;
+import jialei.com.spitter.demodataaccess.domain.SpittleDomain;
+import jialei.com.spitter.demodataaccess.jpa.repository.MyJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

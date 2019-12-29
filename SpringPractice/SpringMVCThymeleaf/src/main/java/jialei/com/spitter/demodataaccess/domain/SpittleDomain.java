@@ -1,10 +1,8 @@
-package jialei.com.spitter.dataaccess.domain;
+package jialei.com.spitter.demodataaccess.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import javax.persistence.*;
 import java.util.Date;

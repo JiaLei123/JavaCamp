@@ -9,8 +9,6 @@ import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
-import org.thymeleaf.ITemplateEngine;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.extras.springsecurity3.dialect.SpringSecurityDialect;
 import org.thymeleaf.spring4.SpringTemplateEngine;
@@ -23,7 +21,7 @@ import java.io.IOException;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan({"jialei.com.spitter.web", "jialei.com.spitter.dataaccess"})
+@ComponentScan({"jialei.com.spitter.web", "jialei.com.spitter.demodataaccess"})
 public class WebConfig extends WebMvcConfigurerAdapter {
     @Bean
     public TemplateEngine templateEngine(ITemplateResolver templateResolver){
