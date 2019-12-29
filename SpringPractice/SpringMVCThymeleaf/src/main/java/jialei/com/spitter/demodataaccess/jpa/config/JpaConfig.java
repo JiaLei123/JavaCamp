@@ -16,7 +16,7 @@ public class JpaConfig {
         LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
         emf.setDataSource(dataSource);
         emf.setJpaVendorAdapter(jpaVendorAdapter);
-        emf.setPackagesToScan("jialei.com.spitter.dataaccess.domain");
+        emf.setPackagesToScan("jialei.com.spitter.demodataaccess.domain");
         return emf;
     }
 
