@@ -1,9 +1,9 @@
-package jialei.com.spitter.demonosqldb.web;
+package jialei.com.spitter.web;
 
 import com.alibaba.fastjson.JSON;
 import jialei.com.spitter.demodataaccess.domain.SpittleDomain;
-import jialei.com.spitter.demonosqldb.model.Item;
-import jialei.com.spitter.demonosqldb.model.Order;
+import jialei.com.spitter.model.Item;
+import jialei.com.spitter.model.Order;
 import jialei.com.spitter.demonosqldb.repository.OrderRepository;
 import jialei.com.spitter.demonosqldb.repository.OrderRepositoryBase;
 import org.springframework.beans.factory.annotation.Autowired;

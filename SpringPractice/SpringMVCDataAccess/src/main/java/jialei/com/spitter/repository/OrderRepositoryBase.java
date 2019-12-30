@@ -1,6 +1,6 @@
-package jialei.com.spitter.demonosqldb.repository;
+package jialei.com.spitter.repository;
 
-import jialei.com.spitter.demonosqldb.model.Order;
+import jialei.com.spitter.model.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.MongoTemplate;

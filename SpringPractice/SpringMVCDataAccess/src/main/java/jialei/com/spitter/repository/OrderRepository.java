@@ -1,6 +1,6 @@
-package jialei.com.spitter.demonosqldb.repository;
+package jialei.com.spitter.repository;
 
-import jialei.com.spitter.demonosqldb.model.Order;
+import jialei.com.spitter.model.Order;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;

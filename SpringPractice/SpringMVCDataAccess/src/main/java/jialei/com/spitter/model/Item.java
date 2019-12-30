@@ -1,4 +1,4 @@
-package jialei.com.spitter.demonosqldb.model;
+package jialei.com.spitter.model;
 
 import lombok.Data;
 

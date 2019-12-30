@@ -1,4 +1,4 @@
-package jialei.com.spitter.demonosqldb.config;
+package jialei.com.spitter.config;
 
 import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 @Configuration
-@EnableMongoRepositories(basePackages = "jialei.com.spitter.demonosqldb.repository")
+//@EnableMongoRepositories(basePackages = "jialei.com.spitter.demonosqldb.repository")
 public class MongoConfigAdv extends AbstractMongoConfiguration {
     @Override
     protected String getDatabaseName() {

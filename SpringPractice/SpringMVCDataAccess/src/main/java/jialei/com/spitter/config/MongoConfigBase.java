@@ -1,4 +1,4 @@
-package jialei.com.spitter.demonosqldb.config;
+package jialei.com.spitter.config;
 
 import com.mongodb.Mongo;
 import com.mongodb.MongoClient;

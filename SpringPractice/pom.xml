@@ -15,6 +15,7 @@
         <module>SpringMVCThymeleaf</module>
         <module>SpringPizza</module>
         <module>SpringMVCXMLThymeleaf</module>
+        <module>SpringMVCDataAccess</module>
     </modules>
 
     <dependencyManagement>
