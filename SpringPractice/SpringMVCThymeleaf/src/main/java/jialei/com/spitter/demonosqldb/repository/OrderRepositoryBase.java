@@ -3,16 +3,18 @@ package jialei.com.spitter.demonosqldb.repository;
 import jialei.com.spitter.demonosqldb.model.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
+//@Repository
 public class OrderRepositoryBase {
+
     @Autowired
-    private MongoOperations mongoOperations;
+    private MongoTemplate mongoOperations;
 
     public Long getCount(){
         return mongoOperations.getCollection("order").count();
