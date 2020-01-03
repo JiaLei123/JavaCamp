@@ -10,14 +10,14 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-//@Repository
+@Repository
 public class OrderRepositoryBase {
 
     @Autowired
     private MongoTemplate mongoOperations;
 
     public Long getCount(){
-        return mongoOperations.getCollection("order").count();
+        return mongoOperations.getCollection("order").countDocuments();
     }
 
     public void saveOrder(Order order){

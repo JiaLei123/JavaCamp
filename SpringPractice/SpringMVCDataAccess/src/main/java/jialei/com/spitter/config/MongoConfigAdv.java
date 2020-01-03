@@ -1,21 +1,21 @@
 package jialei.com.spitter.config;
 
-import com.mongodb.Mongo;
-import com.mongodb.MongoClient;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
+import org.springframework.data.mongodb.config.AbstractMongoClientConfiguration;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 @Configuration
-//@EnableMongoRepositories(basePackages = "jialei.com.spitter.demonosqldb.repository")
-public class MongoConfigAdv extends AbstractMongoConfiguration {
+@EnableMongoRepositories(basePackages = "jialei.com.spitter.repository")
+public class MongoConfigAdv extends AbstractMongoClientConfiguration {
     @Override
     protected String getDatabaseName() {
         return "OrdersDB";
     }
 
     @Override
-    public Mongo mongo() throws Exception {
-        return new MongoClient("localhost");
+    public MongoClient mongoClient() {
+        return MongoClients.create("mongodb://localhost:27017/?replicaSet=rs0&w=majority");
     }
 }

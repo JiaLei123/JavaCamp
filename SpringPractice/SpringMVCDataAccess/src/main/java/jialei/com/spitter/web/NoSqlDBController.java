@@ -1,11 +1,10 @@
 package jialei.com.spitter.web;
 
 import com.alibaba.fastjson.JSON;
-import jialei.com.spitter.demodataaccess.domain.SpittleDomain;
 import jialei.com.spitter.model.Item;
 import jialei.com.spitter.model.Order;
-import jialei.com.spitter.demonosqldb.repository.OrderRepository;
-import jialei.com.spitter.demonosqldb.repository.OrderRepositoryBase;
+import jialei.com.spitter.repository.OrderRepository;
+import jialei.com.spitter.repository.OrderRepositoryBase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,10 +16,10 @@ import java.util.Arrays;
 @RequestMapping("nosql")
 public class NoSqlDBController {
 
-//    @Autowired
+    @Autowired
     private OrderRepositoryBase orderRepositoryBase;
 
-//    @Autowired
+    @Autowired
     private OrderRepository orderRepository;
 
     @RequestMapping("saveOrder")
