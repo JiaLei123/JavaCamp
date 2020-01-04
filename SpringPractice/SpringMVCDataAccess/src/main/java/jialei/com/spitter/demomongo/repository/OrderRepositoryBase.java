@@ -1,4 +1,4 @@
-package jialei.com.spitter.repository;
+package jialei.com.spitter.demomongo.repository;
 
 import jialei.com.spitter.model.Order;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,7 @@ public class OrderRepositoryBase {
         mongoOperations.save(order, "order");
     }
 
-    public Order findById(Long orderId){
+    public Order findById(String orderId){
         return mongoOperations.findById(orderId, Order.class);
     }
 

@@ -1,4 +1,4 @@
-package jialei.com.spitter.config;
+package jialei.com.spitter.demomongo.config;
 
 import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
@@ -10,8 +10,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 import java.net.UnknownHostException;
 
-//@Configuration
-//@EnableMongoRepositories(basePackages = "jialei.com.spitter.demonosqldb.repository")
+@Configuration
 public class MongoConfigBase {
     @Bean
     public MongoClient mongoClient() throws UnknownHostException {
@@ -19,7 +18,7 @@ public class MongoConfigBase {
     }
 
     @Bean
-    public  MongoOperations mongoTemplate(MongoClient mongoClient) {
+    public  MongoOperations myMongoTemplate(MongoClient mongoClient) {
         return new MongoTemplate(mongoClient, "OrdersDB");
     }
 }

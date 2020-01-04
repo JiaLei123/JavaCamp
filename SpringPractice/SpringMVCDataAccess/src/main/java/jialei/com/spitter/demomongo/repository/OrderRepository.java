@@ -1,4 +1,4 @@
-package jialei.com.spitter.repository;
+package jialei.com.spitter.demomongo.repository;
 
 import jialei.com.spitter.model.Order;
 import org.springframework.data.mongodb.repository.MongoRepository;
