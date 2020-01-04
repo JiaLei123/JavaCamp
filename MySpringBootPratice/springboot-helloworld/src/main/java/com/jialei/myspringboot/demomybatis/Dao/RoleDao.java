@@ -12,4 +12,6 @@ public interface RoleDao {
     Role getById(Integer id);
 
     void insert(Role role);
+
+    void delete(Integer id);
 }

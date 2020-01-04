@@ -10,4 +10,8 @@
     <insert id="insert">
         insert into role(id, role_name, role_desc) VALUES (#{id}, #{roleName}, #{roleDesc})
     </insert>
+
+    <delete id="delete">
+        delete from role where id=#{id}
+    </delete>
 </mapper>

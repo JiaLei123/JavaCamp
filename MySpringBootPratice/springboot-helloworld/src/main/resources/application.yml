@@ -57,6 +57,9 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  redis:
+    host: localhost
+
 
 logging.level.com.jialei.myspringboot.demomybatis.Dao: debug
 

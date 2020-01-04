@@ -4,9 +4,7 @@ import com.jialei.myspringboot.democache.service.RoleService;
 import com.jialei.myspringboot.demomybatis.model.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 /**
  *
@@ -26,6 +24,19 @@ public class CacheController {
         Role role = roleService.getRolebyId(id);
         return role;
     }
+
+    @RequestMapping("insert")
+    @ResponseBody
+    public void insert(@RequestParam("id") Integer id, @RequestParam("roleName") String roleName,@RequestParam("roleDesc") String roleDesc){
+        roleService.updateRole(new Role(id, roleName, roleDesc));
+    }
+
+    @RequestMapping("delete/{id}")
+    @ResponseBody
+    public void delete(@PathVariable("id") Integer id){
+        roleService.deleteRole(id);
+    }
+
 
     @RequestMapping("query1/{id}")
     @ResponseBody
@@ -55,11 +66,7 @@ public class CacheController {
         return role;
     }
 
-    //@RequestMapping("insert")
-    //@ResponseBody
-    //public void insert(@RequestBody Role role){
-    //    roleService.insert(role);
-    //}
+
 
 
 }
