@@ -21,7 +21,7 @@ import java.io.IOException;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan({"jialei.com.spitter.demomongo"})
+@ComponentScan({"jialei.com.spitter.demomongo", "jialei.com.spitter.demoredis"})
 public class WebConfig extends WebMvcConfigurerAdapter {
     @Bean
     public TemplateEngine templateEngine(ITemplateResolver templateResolver){
