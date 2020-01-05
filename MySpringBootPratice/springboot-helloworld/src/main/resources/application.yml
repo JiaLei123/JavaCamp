@@ -59,7 +59,11 @@ spring:
     show-sql: true
   redis:
     host: localhost
-
+  rabbitmq:
+    host: localhost
+    username: guest
+    password: guest
+    port: 5672
 
 logging.level.com.jialei.myspringboot.demomybatis.Dao: debug
 
