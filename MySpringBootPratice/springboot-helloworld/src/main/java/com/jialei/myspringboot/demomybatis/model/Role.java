@@ -2,6 +2,9 @@ package com.jialei.myspringboot.demomybatis.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
 
 /**
  *
@@ -10,7 +13,8 @@ import lombok.Data;
  */
 @Data
 @AllArgsConstructor
-public class Role {
+@NoArgsConstructor
+public class Role implements Serializable {
     private Integer id;
 
     private String roleName;
