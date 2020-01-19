@@ -17,5 +17,4 @@ public class MqService {
         // 只需要传入要发送的对象，自动序列化发送给rabbitmq
         rabbitTemplate.convertAndSend(exchange, channel, body);
     }
-
 }
