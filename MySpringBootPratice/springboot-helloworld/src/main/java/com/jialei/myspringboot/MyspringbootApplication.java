@@ -3,6 +3,7 @@ package com.jialei.myspringboot;
 import com.jialei.myspringboot.demoreadconfig.bean.Person;
 import com.jialei.myspringboot.util.LoggerUtil;
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
@@ -13,6 +14,7 @@ import org.slf4j.LoggerFactory;
 @MapperScan("com.jialei.myspringboot.demomybatis.Dao")
 @SpringBootApplication
 @EnableCaching
+@EnableRabbit
 public class MyspringbootApplication {
 
 	public static void main(String[] args) {
