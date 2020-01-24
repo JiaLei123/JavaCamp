@@ -28,7 +28,7 @@ public class TrackCounterTest {
         compactDisc.playTrack(5);
         compactDisc.playTrack(5);
 
-        assertEquals(2, trackCounter.getPlayCounter(1));
+        assertEquals(3, trackCounter.getPlayCounter(1));
         assertEquals(2, trackCounter.getPlayCounter(2));
         assertEquals(1, trackCounter.getPlayCounter(3));
         assertEquals(1, trackCounter.getPlayCounter(4));
