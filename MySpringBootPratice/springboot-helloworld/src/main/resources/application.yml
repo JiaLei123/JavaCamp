@@ -69,8 +69,8 @@ spring:
       uris: http://localhost:9200
   data:
     elasticsearch:
-      cluster-name: docker-cluster
-      cluster-nodes: http://localhost:9300
+      cluster-name: elasticsearch
+      cluster-nodes: localhost:9301
 
 
 logging.level.com.jialei.myspringboot.demomybatis.Dao: debug

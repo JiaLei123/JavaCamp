@@ -77,7 +77,7 @@ public class ElasticSearchForJestTest {
             SearchResult.Hit<Article, Void> items = hits.get(0);
             Article queryarticle = items.source;
             Assert.assertEquals(queryarticle.getTitle(), "TestCase");
-            logger.info(JSON.toJSONString(article));
+            logger.debug(JSON.toJSONString(article));
         } catch (IOException e) {
             e.printStackTrace();
         }
