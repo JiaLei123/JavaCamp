@@ -5,8 +5,6 @@ package com.jialei.myspringboot.demoelasticsearch.controller;
 
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
-import java.util.concurrent.ExecutionException;
 
 /**
  *
@@ -16,4 +14,6 @@ import java.util.concurrent.ExecutionException;
 @RestController
 @RequestMapping("es")
 public class EsController {
+
+
 }

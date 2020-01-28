@@ -64,6 +64,14 @@ spring:
     username: guest
     password: guest
     port: 5672
+  elasticsearch:
+    jest:
+      uris: http://localhost:9200
+  data:
+    elasticsearch:
+      cluster-name: docker-cluster
+      cluster-nodes: http://localhost:9300
+
 
 logging.level.com.jialei.myspringboot.demomybatis.Dao: debug
 
