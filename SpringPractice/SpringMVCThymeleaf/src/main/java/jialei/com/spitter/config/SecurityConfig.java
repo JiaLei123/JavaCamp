@@ -43,7 +43,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logout().logoutSuccessUrl("/")
                 .and()
                 .authorizeRequests()
-                .antMatchers("/thy/spittles").authenticated()
+                .antMatchers("/spittles").authenticated()
                 //.antMatchers("/spittles").authenticated()
                 .antMatchers("/spitter/me").authenticated()
                 //.antMatchers(HttpMethod.POST, "/spittles").authenticated()

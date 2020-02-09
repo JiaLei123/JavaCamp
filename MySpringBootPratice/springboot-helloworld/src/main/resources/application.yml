@@ -71,6 +71,10 @@ spring:
     elasticsearch:
       cluster-name: elasticsearch
       cluster-nodes: localhost:9301
+  mail:
+    host: stmp.qq.com
+    username: 693248540@qq.com
+    password: aaa
 
 
 logging.level.com.jialei.myspringboot.demomybatis.Dao: debug
