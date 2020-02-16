@@ -16,6 +16,8 @@
         <module>SpringPizza</module>
         <module>SpringMVCXMLThymeleaf</module>
         <module>SpringMVCDataAccess</module>
+        <module>SpringMVCRemoteClient</module>
+        <module>SpringMVCRemoteFacade</module>
     </modules>
 
     <dependencyManagement>
