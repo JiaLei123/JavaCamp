@@ -2,12 +2,14 @@ package jialei.com.spitter.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 import java.util.Date;
 
 @Data
+@ToString
 public class Spittle {
     private Long id;
     private String message;
@@ -16,7 +18,6 @@ public class Spittle {
     private Double longitude;
 
     public Spittle(){
-
     }
 
     public Spittle(String message, Date time){
