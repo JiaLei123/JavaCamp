@@ -34,6 +34,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+                .csrf().disable()
                 .formLogin()
                 //指定登录页的路径
                 .loginPage("/login")
@@ -43,7 +44,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logout().logoutSuccessUrl("/")
                 .and()
                 .authorizeRequests()
-                .antMatchers("/thy/spittles").authenticated()
+                .antMatchers("/spittles").authenticated()
                 //.antMatchers("/spittles").authenticated()
                 .antMatchers("/spitter/me").authenticated()
                 //.antMatchers(HttpMethod.POST, "/spittles").authenticated()

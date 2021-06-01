@@ -1,6 +1,7 @@
 package jialei.com.spitter.web;
 
 import com.alibaba.fastjson.JSON;
+import jialei.com.spitter.demosecurity.server.SecurityServer;
 import jialei.com.spitter.repository.SpittleRepository;
 import jialei.com.spitter.model.DuplicateSpittleException;
 import jialei.com.spitter.model.Spittle;
@@ -21,6 +22,11 @@ import java.util.List;
 public class SpittleController {
 //    @Autowired
     private SpittleRepository spittleRepository;
+
+    //used to test 基于方法级别的安全验证
+    @Autowired
+    private SecurityServer securityServer;
+
 
     @Autowired
     public SpittleController(SpittleRepository spittleRepository){
@@ -99,5 +105,15 @@ public class SpittleController {
     @ExceptionHandler(DuplicateSpittleException.class)
     public String handleDuplicteSpittle(){
         return "error/duplicate";
+    }
+
+    /**
+     * 获取方法级别的安全验证
+     * @return
+     */
+    @RequestMapping(value = "/squery", method = RequestMethod.GET)
+    public String queryWithSecurity(){
+        securityServer.getMessage();
+        return "spittleList";
     }
 }

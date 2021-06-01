@@ -3,11 +3,9 @@ package jialei.com.spitter.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.MediaType;
 import org.springframework.web.multipart.MultipartResolver;
 import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.ViewResolver;
-import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -23,7 +21,7 @@ import java.io.IOException;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan({"jialei.com.spitter.web", "jialei.com.spitter.demorest.controller"})
+@ComponentScan({"jialei.com.spitter"})
 public class WebConfig extends WebMvcConfigurerAdapter {
     @Bean
     public TemplateEngine templateEngine(ITemplateResolver templateResolver){
