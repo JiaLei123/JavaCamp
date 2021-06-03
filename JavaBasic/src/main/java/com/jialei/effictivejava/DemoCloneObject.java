@@ -4,6 +4,8 @@
  */
 package com.jialei.effictivejava;
 
+import java.util.Comparator;
+
 /**
  * @author jialei
  * @version : CloneObject.java, v 0.1 2021年05月31日 11:57 下午 jialei Exp $
@@ -31,4 +33,5 @@ public class DemoCloneObject implements Cloneable{
         }
         System.out.println(testOjb);
     }
+
 }
